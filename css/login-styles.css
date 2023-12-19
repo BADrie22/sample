@@ -1,0 +1,305 @@
+* {
+    font-size: 10px;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.login-body {
+    background: linear-gradient(180deg, rgba(0, 4, 40, 0.89) 1.59%, rgba(0, 78, 146, 0.89) 100%);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: none;
+}
+
+.container-login {
+    background-color: #D9D9D9;
+    border-radius: 1.875rem;
+    width: 30vw;
+    height: 95vh;
+    max-width: 400px;
+    max-height: 570px;
+    min-width: 150px;
+    min-height: 600px;
+    margin: 0 auto;
+    padding: 10px;
+    box-shadow: 2vw 2vw 3vw 1.5vw rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#logincontainer {
+    display: flex;
+}
+
+
+.logo-svg {
+    width: 75%;
+    margin-top: 5%;
+    padding: 10px 30px;
+}
+
+.login-email,
+.login-email-password {
+    width: 87%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 5px 10px;
+}
+
+.login-email input,
+.login-email-password input {
+    border-radius: 10px;
+    border: 3px solid rgba(0, 78, 146, 0.89);
+    height: 60%;
+    width: 100%;
+    color: #000;
+    font-family: Poppins;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding: 0px 10px;
+}
+
+.login-email input,
+.login-email-password input:focus {
+    outline: none;
+}
+
+
+/* IF WRONG PASSWORD ERROR */
+
+.login-email-password input {
+    border: 3px solid #EA4335;
+}
+
+/*  END  */
+
+.login-email label,
+.login-email-password label {
+    color: #000;
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.wrong-password {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    margin-top: -0.9rem;
+}
+
+/* Wrong-password-lable */
+
+.wrong-password label {
+    color: #EA4335;
+    font-family: Poppins;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-align: right;
+    width: 100%;
+}
+
+/* End */
+
+
+
+.forget-password {
+    margin-top: 15px;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.forget-password a {
+    color: #000;
+    font-family: Poppins;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.forget-password a:hover {
+    color: #004E92;
+}
+
+.login-button {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 18%;
+    width: 87%;
+
+}
+
+.login-button input {
+    padding: 10px 10px;
+    border-radius: 10px;
+    background: #004E92;
+    height: 44%;
+    width: 93%;
+    border: none;
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.login-button input:hover {
+    cursor: pointer;
+    background: #4b93d1;
+}
+
+.login-or {
+    display: flex;
+    flex-direction: row;
+    width: 87%;
+    height: 3%;
+    margin-left: 25px;
+}
+
+.login-or div {
+    width: 41%;
+    height: 2%;
+    background-color: rgb(0, 0, 0);
+    margin-top: 7.5px;
+}
+
+.login-or p {
+    margin: 0 10px;
+    color: rgb(0, 0, 0);
+    font-family: Poppins;
+    font-size: 11px;
+}
+
+.google-login-button {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 10%;
+    width: 87%;
+    margin-bottom: 23px;
+
+
+}
+
+.google-login-button button {
+    padding: 10px 10px;
+    border-radius: 10px;
+    background: #000000;
+    height: 80%;
+    width: 93%;
+    border: none;
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.google-login-button button:hover {
+    cursor: pointer;
+    background-color: #575757;
+}
+
+.google-icon {
+    width: 13%;
+}
+
+.new-register {
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -10px;
+}
+
+.new-register p {
+    color: #000;
+    font-family: Poppins;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.new-register a {
+    color: #000;
+    font-family: Poppins;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    font-style: none;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+.new-register a:hover {
+    color: #004E92;
+}
+
+
+@media screen and (max-width: 1100px) {
+    .container-login {
+        width: 90vw;
+        height: 80vh;
+        margin-top: -10rem;
+    }
+
+
+
+    .loading-page {
+        width: 100%;
+        height: 100%;
+        background-color: #ffffff;
+        position: fixed;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        opacity: 1;
+        transition: background-color 2s ease;
+
+    }
+
+    .content-loaded .loading-page {
+        background-color: transparent;
+        pointer-events: none;
+    }
+
+    .loading-logo {
+        width: 100%;
+        transform: translateY(0);
+        transition: transform 2s ease;
+    }
+
+    .content-loaded .loading-logo {
+        transform: translateY(-69%) scale(60%);
+    }
+
+}

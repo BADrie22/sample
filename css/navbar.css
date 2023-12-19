@@ -1,0 +1,105 @@
+#ham-menu {
+  display: none;
+  cursor: pointer;
+}
+
+nav {
+  margin: auto;
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  font-size: 24px;
+  text-align: center;
+  padding: 1rem;
+  color: #f2f2f2;
+  background: #000000cc;
+  box-shadow: 0.25rem 0 1rem #121212;
+  overflow: hidden;
+}
+
+.main-logo {
+  padding: 1rem;
+
+  img {
+    max-width: 100%;
+  }
+}
+
+.nav-options {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+svg {
+  width: 15%;
+  vertical-align: middle;
+  padding: 0 0.5rem;
+}
+
+#menu-item {
+  display: flex;
+  flex-direction: row;
+
+  a {
+    text-align: start;
+    width: 85%;
+    padding: 1rem 0.5rem;
+    color: #f2f2f2;
+    text-decoration: none;
+    border-radius: 0.25rem;
+  }
+
+  a.active {
+    /* background: linear-gradient(120deg, rgba(242, 242, 242, 0.5), rgba(242, 242, 242, 1)); */
+    background-color: rgba(242, 242, 242, 1);
+    color: #277eba;
+    svg {
+      fill: #277eba;
+      stroke: #277eba;
+    }
+  }
+}
+
+.logout-button {
+  width: 80%;
+  display: block;
+  cursor: pointer;
+  background-color: #004e92e3;
+  padding: 0.5rem 0;
+  border-radius: 0.25rem;
+  margin: auto;
+}
+
+a:hover,
+.logout-button:hover {
+  background-color: #277eba;
+}
+
+/* Extra small devices (phones) */
+@media only screen and (max-width: 575.98px) {
+}
+
+/* Small devices (tablets) */
+@media only screen and (min-width: 576px) and (max-width: 767.98px) {
+  /* Styles for screens between 576px and 767.98px */
+}
+
+/* Medium devices (laptops, desktops) */
+@media only screen and (min-width: 768px) and (max-width: 991.98px) {
+  /* Styles for screens between 768px and 991.98px */
+}
+
+/* Large devices (large desktops) */
+@media only screen and (min-width: 992px) and (max-width: 1199.98px) {
+  /* Styles for screens between 992px and 1199.98px */
+}
+
+/* Extra large devices (extra large desktops) */
+@media only screen and (min-width: 1200px) {
+  /* Styles for screens 1200px and above */
+}

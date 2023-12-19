@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reset Password</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <main>
+      <img src="./img/Headway.svg" alt="Headway logo" />
+      <form
+        action=""
+        method="post"
+        autocomplete="off"
+        onsubmit="return validateOTP()"
+      >
+        <label for="getOTP">OTP</label>
+        <input
+          type="text"
+          name="getOTP"
+          id="getOTP"
+          placeholder="------"
+          maxlength="6"
+          oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+        />
+        <div class="subSection">
+          <span id="timer">03:00</span>
+          <a href="">Resend OTP</a>
+        </div>
+        <span id="validate">OTP does not match</span>
+        <button type="submit">Verify</button>
+        <a href="./forgot-password.html" id="cancel-button">Cancel</a>
+      </form>
+    </main>
+
+    <script>
+      const spanner = document.getElementById("validate");
+
+      function validateOTP() {
+        const otpInput = document.getElementById("getOTP");
+        const isValid = /^\d{6}$/.test(otpInput.value);
+
+        if (!isValid) {
+          spanner.style.visibility = "visible";
+          return false;
+        } else {
+          spanner.style.visibility = "hidden";
+          return true;
+        }
+      }
+    </script>
+  </body>
+</html>

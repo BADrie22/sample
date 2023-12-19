@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/profile.css" />
+    <link rel="import" href="navbar.html" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body onload="classSelect('profile')">
+    <div id="navbarContainer"></div>
+
+    <main>
+      <div id="spacing"></div>
+
+      <div class="profileSection">
+        <header>
+          <span id="spannable">Your Profile</span>
+          <button type="button" id="editProfileBtn">Edit Profile</button>
+        </header>
+
+        <form action="" method="post">
+          <div class="img-section">
+            <input
+              type="file"
+              name="uploadLogo"
+              id="uploadLogo"
+              onmouseover="setVisible()"
+              onchange="handleFile()"
+              tabindex="1"
+            />
+            <img src="./img/Headway.svg" id="imagePreview" alt="" />
+            <label id="upload">Upload File</label>
+          </div>
+
+          <div class="section">
+            <div class="primary-section">
+              <div class="form-col">
+                <label for="compName">Company Name</label>
+                <input type="text" name="compName" id="compName" tabindex="2" />
+              </div>
+              <div class="form-col">
+                <label for="autocompletePlaces">Location</label>
+                <input
+                  type="text"
+                  name="location"
+                  id="autocompletePlaces"
+                  tabindex="3"
+                />
+              </div>
+              <div class="form-col">
+                <label for="compURL">Website URL</label>
+                <input type="url" name="compURL" id="compURL" tabindex="4" />
+              </div>
+            </div>
+
+            <div class="primary-section">
+              <div class="form-col">
+                <label for="contactPerson">Contact Person Name</label>
+                <input
+                  type="text"
+                  name="contactPerson"
+                  id="contactPerson"
+                  tabindex="6"
+                />
+              </div>
+              <div class="form-col">
+                <label for="designation">Designation</label>
+                <input
+                  type="text"
+                  name="designation"
+                  id="designation"
+                  tabindex="7"
+                />
+              </div>
+              <div class="form-col">
+                <label for="compSector">Sector</label>
+                <input
+                  type="text"
+                  name="compSector"
+                  id="compSector"
+                  tabindex="8"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="section">
+            <button type="reset" tabindex="10">Discard</button>
+            <button type="submit" tabindex="9">Save</button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <script>
+      const spanText = document.getElementById("upload");
+      function classSelect(str) {
+        const activeClass = document.getElementById(str);
+        if (activeClass) {
+          activeClass.classList.add("active");
+          console.log(activeClass);
+        }
+      }
+      // Fetch and insert the navbar content
+      fetch("navbar.html")
+        .then((response) => response.text())
+        .then((html) => {
+          document.getElementById("navbarContainer").innerHTML = html;
+        });
+
+      function setVisible() {
+        spanText.style.opacity = "1";
+      }
+
+      function handleFile() {
+        const fileInput = document.getElementById("uploadLogo");
+        const imagePreview = document.getElementById("imagePreview");
+
+        const file = fileInput.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            imagePreview.src = e.target.result;
+          };
+          reader.readAsDataURL(file);
+          spanText.style.opacity = "0";
+        } else {
+          // Handle case where no file is selected
+          imagePreview.src = "#";
+        }
+      }
+    </script>
+  </body>
+</html>
