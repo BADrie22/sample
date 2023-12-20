@@ -27,26 +27,14 @@
             <div id="spacing"></div>
 
             <div class="profileSection">
-                <header>
-                    <span id="spannable">Your Profile</span>
+                <header style="height: 10%;">
+                    <span id="spannable">Job Details</span>
                     <button type="button" id="editProfileBtn">
-                        Edit Profile
+                        Edit Details
                     </button>
                 </header>
 
                 <form action="" method="post">
-                    <div class="img-section">
-                        <input
-                            type="file"
-                            name="uploadLogo"
-                            id="uploadLogo"
-                            onchange="handleFile()"
-                            tabindex="1"
-                            disabled
-                        />
-                        <img src="./img/Headway.svg" id="imagePreview" alt="" />
-                        <label id="upload">Upload File</label>
-                    </div>
 
                     <div class="section">
                         <div class="primary-section">
@@ -58,7 +46,16 @@
                                     id="compName"
                                     tabindex="2"
                                     disabled
-                                    value="bruh"
+                                />
+                            </div>
+                            <div class="form-col">
+                                <label for="compName">Company Name</label>
+                                <input
+                                    type="text"
+                                    name="compName"
+                                    id="compName"
+                                    tabindex="2"
+                                    disabled
                                 />
                             </div>
                             <div class="form-col">

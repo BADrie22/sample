@@ -9,7 +9,6 @@ body {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-
     height: 100vh;
     width: 100vw;
     overflow: hidden;
@@ -68,15 +67,12 @@ button:hover {
         font-weight: 600;
         width: 100%;
         height: 15%;
-
         span {
             color: #9acaea;
         }
-
         button {
             font-size: 16px;
             border-color: #27b992;
-            /* color: #27B992; */
             padding: 0.5rem 1.5rem;
         }
     }
@@ -137,7 +133,7 @@ button:hover {
             display: flex;
             flex-direction: row;
             justify-content: center;
-            padding: 1rem;
+            padding: rem;
             button {
                 padding: 1rem;
                 margin-inline: 1rem;

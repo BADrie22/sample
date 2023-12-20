@@ -1,5 +1,8 @@
 * {
     color: #ddedf8;
+    ::-webkit-scrollbar {
+        display: none;
+    }    
 }
 
 #ham-menu {
