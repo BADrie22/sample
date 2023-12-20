@@ -8,7 +8,7 @@ function classSelect(str) {
 }
 
 // Fetch and insert the navbar content
-fetch("./navbar.html")
+fetch("./navbar/navbar.html")
   .then((response) => {
     if (!response.ok) {
       throw new Error("Network response was not ok");
