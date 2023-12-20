@@ -1,88 +1,87 @@
 * {
-  color: #DDEDF8;
+    color: #ddedf8;
 }
 
 #ham-menu {
-  display: none;
-  cursor: pointer;
+    display: none;
+    cursor: pointer;
 }
 
 nav {
-  margin: auto;
-  position: absolute;
-  z-index: 1;
-  height: 100%;
-  width: 20%;
-  display: flex;
-  flex-direction: column;
-  font-size: 16px;
-  text-align: center;
-  padding: 1rem;
-  background: #03090dcc;
-  box-shadow: 0.25rem 0 1rem #121212;
+    margin: auto;
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    text-align: center;
+    padding: 1rem;
+    background: #03090dcc;
+    box-shadow: 0.25rem 0 1rem #121212;
 }
 
 .main-logo {
-  padding: 1rem;
-  img {
-    max-width: 100%;
-  }
+    padding: 1rem;
+    img {
+        max-width: 100%;
+    }
 }
 
 .nav-options {
-  display: flex;
-  flex-direction: column;
-  margin: 1rem;
-  svg {
-    width: 15%;
-    vertical-align: middle;
-    padding: 0 0.5rem;
-  }
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    svg {
+        width: 15%;
+        vertical-align: middle;
+        padding: 0 0.5rem;
+    }
 }
 
-
 #menu-item {
-  display: flex;
-  flex-direction: row;
-  
-  a {
-    border-radius: 0.25rem;
-    padding: 1rem 0.5rem;
-    text-align: start;
-    text-decoration: none;
-    white-space: nowrap;
-    width: 100%;
-  }
+    display: flex;
+    flex-direction: row;
 
-  .active {
-    background: linear-gradient(120deg,  #277eba, rgba(242, 242, 242, 0.1), #277eba);
-    color: rgb(39, 126, 186);
-    svg {
-      fill: #277eba;
-      stroke: #277eba;
+    a {
+        border-radius: 0.25rem;
+        padding: 1rem 0.5rem;
+        text-align: start;
+        text-decoration: none;
+        white-space: nowrap;
+        width: 100%;
     }
-  }
+
+    .active {
+        background: linear-gradient(135deg, #143F5D,  #277eba, #89C1E6);
+        color: rgb(39, 126, 186);
+        svg {
+            fill: #277eba;
+            stroke: #277eba;
+        }
+    }
 }
 
 .logout-button {
-  background-color: transparent;
-  border: 2px solid #277eba;
-  border-radius: 0.25rem;
-  color: #277eba;
-  cursor: pointer;
-  width: 80%;
-  padding: 0.5rem;
-  border-radius: 0.25rem;
-  margin: auto;
-  font-weight: 600;
+    background-color: transparent;
+    border: 2px solid #277eba;
+    border-radius: 0.25rem;
+    color: #277eba;
+    cursor: pointer;
+    width: 80%;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    margin: auto;
+    font-weight: 600;
 }
 
 a:hover {
-  background-color: #277eba;
+    background-color: #277eba;
 }
 .logout-button:hover {
-  outline: none;
-  box-shadow: 0 0 1rem #277eba;
+    outline: none;
+    box-shadow: 0 0 1rem #277eba;
 }
 
 /* Extra small devices (phones) */
@@ -91,20 +90,20 @@ a:hover {
 
 /* Small devices (tablets) */
 @media only screen and (min-width: 576px) and (max-width: 767.98px) {
-  /* Styles for screens between 576px and 767.98px */
+    /* Styles for screens between 576px and 767.98px */
 }
 
 /* Medium devices (laptops, desktops) */
 @media only screen and (min-width: 768px) and (max-width: 991.98px) {
-  /* Styles for screens between 768px and 991.98px */
+    /* Styles for screens between 768px and 991.98px */
 }
 
 /* Large devices (large desktops) */
 @media only screen and (min-width: 992px) and (max-width: 1199.98px) {
-  /* Styles for screens between 992px and 1199.98px */
+    /* Styles for screens between 992px and 1199.98px */
 }
 
 /* Extra large devices (extra large desktops) */
 @media only screen and (min-width: 1200px) {
-  /* Styles for screens 1200px and above */
+    /* Styles for screens 1200px and above */
 }

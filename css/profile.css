@@ -86,10 +86,10 @@ button:focus, button:hover {
     width: 100%;
     border-radius: 1rem;
     flex-direction: column;
-    background-color: #03090D;
-    box-shadow: 0 1rem 3rem #03090D;
+    background-color: #000428;
+    box-shadow: 0 1rem 3rem #000428;
     .img-section {
-      background-color: #03090D;
+      background-color: #000428;
       position: absolute;
       align-self: center;
       top: 5%;
@@ -118,10 +118,10 @@ button:focus, button:hover {
         object-fit: contain;
       }
       label {
+        opacity: 0;
         position: absolute;
         height: 125px;
         width: 125px;
-        opacity: 0;
         text-align: center;
         margin: auto;
         display: flex;
@@ -177,6 +177,10 @@ button:focus, button:hover {
           }
         }
       }
+    }
+
+    #btnSection {
+      display: none;
     }
   }
 }
