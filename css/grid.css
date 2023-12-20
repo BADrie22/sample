@@ -8,18 +8,21 @@
     width: 100%;
     border-radius: 1rem;
     background-color: #03090d;
-    overflow-y: scroll;
-    .title {
-        border-bottom: 1px solid #277EBA;
-        font-weight: 600;
-    }
-    .contents {
-        border-bottom: 1px solid #515151;
-        padding-top: 1rem;
-        button {
-            justify-content: space-between;
+    #scrollable-contain {
+        overflow: scroll;
+        .contents {
+            border-bottom: 1px solid #515151;
+            padding-top: 1rem;
+            button {
+                justify-content: space-between;
+            }
         }
     }
+    .title {
+        border-bottom: 1px solid #277eba;
+        font-weight: 600;
+    }
+
     .title,
     .contents {
         width: 100%;
@@ -28,17 +31,29 @@
         text-align: start;
         gap: 1rem;
         white-space: nowrap;
+        /* div {
+            border: 1px solid #B93127;
+        } */
         div#app-receive {
             display: flex;
             justify-content: space-between;
             button {
                 border: none;
-                color: #27B992;
+                background: none;
+                color: #27b992;
+            }
+            button:hover,
+            button:focus {
+                box-shadow: none;
             }
         }
     }
 
     .contents:hover {
-        border-bottom: 1px solid #B93127;
+        border-bottom: 1px solid #b93127;
     }
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
