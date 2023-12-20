@@ -27,7 +27,7 @@
     .contents {
         width: 100%;
         display: grid;
-        grid-template-columns: 1fr 3.5fr 1.5fr 2fr 1fr;
+        grid-template-columns: 1fr 3.5fr 1.5fr 1.5fr 1fr;
         text-align: start;
         gap: 1rem;
         white-space: nowrap;
