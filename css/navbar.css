@@ -56,10 +56,6 @@ nav {
     .active {
         background: linear-gradient(135deg, #143F5D,  #277eba, #89C1E6);
         color: rgb(39, 126, 186);
-        svg {
-            fill: #277eba;
-            stroke: #277eba;
-        }
     }
 }
 
