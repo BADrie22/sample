@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jobs</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/profile.css" />
+    <link rel="stylesheet" href="css/grid.css">
+  </head>
+  <body onload="classSelect('jobs')">
+    <div id="navbarContainer"></div>
+
+    <main>
+      <div id="spacing"></div>
+
+      <div class="profileSection">
+        <header>
+          <span id="spannable">Jobs</span>
+          <button type="button" id="editBtn">Post a Job</button>
+        </header>
+
+        <div class="grid-box">
+          <div class="title">
+            <div>Sl No</div>
+            <div>Job Title</div>
+            <div>Salary Offered</div>
+            <div>Applications received</div>
+            <div>Status</div>
+          </div>
+          
+          <div class="contents">
+            <div>01</div>
+            <div>Business Development Representative</div>
+            <div>₹3000</div>
+            <div id="app-receive">1000<button type="submit">View</button></div>
+            <div>Closed</div>
+          </div>
+
+          <div class="contents">
+            <div>02</div>
+            <div>Fullstack Graphic Designer</div>
+            <div>₹9999999</div>
+            <div id="app-receive">
+              9999999<button type="submit">View</button>
+            </div>
+            <div>Active</div>
+          </div>
+        </div>
+
+
+    </main>
+
+    <script src="js/classSelect.js"></script>
+  </body>
+</html>

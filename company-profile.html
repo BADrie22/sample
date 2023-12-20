@@ -11,9 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/navbar.css" />
     <link rel="stylesheet" href="css/profile.css" />
-    <link rel="import" href="navbar.html" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -108,43 +106,6 @@
       </div>
     </main>
 
-    <script>
-      const spanText = document.getElementById("upload");
-      function classSelect(str) {
-        const activeClass = document.getElementById(str);
-        if (activeClass) {
-          activeClass.classList.add("active");
-          console.log(activeClass);
-        }
-      }
-      // Fetch and insert the navbar content
-      fetch("navbar.html")
-        .then((response) => response.text())
-        .then((html) => {
-          document.getElementById("navbarContainer").innerHTML = html;
-        });
-
-      function setVisible() {
-        spanText.style.opacity = "1";
-      }
-
-      function handleFile() {
-        const fileInput = document.getElementById("uploadLogo");
-        const imagePreview = document.getElementById("imagePreview");
-
-        const file = fileInput.files[0];
-        if (file) {
-          const reader = new FileReader();
-          reader.onload = function (e) {
-            imagePreview.src = e.target.result;
-          };
-          reader.readAsDataURL(file);
-          spanText.style.opacity = "0";
-        } else {
-          // Handle case where no file is selected
-          imagePreview.src = "#";
-        }
-      }
-    </script>
+    <script src="js/classSelect.js"></script>
   </body>
 </html>

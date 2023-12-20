@@ -1,11 +1,11 @@
 * {
   font-family: Poppins;
-  color: #f2f2f2;
+  color: #DDEDF8;
 }
 
 body {
   margin: 0;
-  background: linear-gradient(rgb(0, 4, 40), rgb(0, 78, 146));
+  background: linear-gradient(#000428, #004e92);
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -30,13 +30,12 @@ main {
 }
 
 button {
-  border: none;
-  border-radius: 0.25rem;
   background-color: transparent;
-  font-weight: 600;
-  cursor: pointer;
   border: 2px solid;
-  transition: all 1s ease-in-out;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.5s ease-in-out;
 }
 
 .img-section:hover,
@@ -47,6 +46,10 @@ button:focus,
 button:hover {
   outline: none;
   box-shadow: 0 0 1rem #277eba;
+}
+
+button:focus, button:hover {
+  box-shadow: 0 0 1rem #2eea7c;
 }
 
 .profileSection {
@@ -65,24 +68,28 @@ button:hover {
     width: 100%;
     height: 15%;
 
+    span {
+      color: #9ACAEA;
+    }
+
     button {
       font-size: 16px;
-      border-color: #277eba;
-      color: #277eba;
+      border-color: #27B992;
+      /* color: #27B992; */
       padding: 0.5rem 1.5rem;
     }
   }
 
   form {
-    /* border: 5px solid red; */
     display: flex;
     padding: 2rem 1rem;
     width: 100%;
     border-radius: 1rem;
     flex-direction: column;
-    background-color: #000000;
+    background-color: #03090D;
+    box-shadow: 0 1rem 3rem #03090D;
     .img-section {
-      background-color: #000000;
+      background-color: #03090D;
       position: absolute;
       align-self: center;
       top: 5%;
@@ -106,12 +113,14 @@ button:hover {
         width: 100px;
         height: 100px;
         border-radius: 50%;
+        shape-image-threshold: inherit;
+        image-rendering: optimizeSpeed;
+        object-fit: contain;
       }
       label {
         position: absolute;
         height: 125px;
         width: 125px;
-        /* z-index: 999; */
         opacity: 0;
         text-align: center;
         margin: auto;
@@ -119,7 +128,7 @@ button:hover {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        line-height: 1.2; /* Adjust line-height for proper vertical alignment */
+        line-height: 1.2;
       }
     }
     .section {
@@ -133,23 +142,20 @@ button:hover {
         width: 25%;
       }
       button:first-child {
-        border-color: #ff0739;
-        color: #ff0739;
+        border-color: #AC2D24;
       }
       button:first-child:hover,
       button:first-child:focus {
-        box-shadow: 0 0 1rem #ff0739;
+        box-shadow: 0 0 1rem #AC2D24;
       }
       button:last-child {
-        border-color: #2eea7c;
-        color: #2eea7c;
+        border-color: #25AD2E;
       }
       button:last-child:hover,
       button:last-child:focus {
         box-shadow: 0 0 1rem #2eea7c;
       }
       .primary-section {
-        /* border: 5px solid red; */
         display: flex;
         flex-direction: column;
         width: 50%;
