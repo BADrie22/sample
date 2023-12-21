@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Jobs</title>
+        <link rel="stylesheet" href="css/profile.css" />
+    </head>
+    <body onload="classSelect('bulk-hire')">
+        <div id="navbarContainer"></div>
+
+        <main>
+            <div id="spacing"></div>
+
+            <div class="profileSection">
+                <header>
+                    <span id="spannable">Bulk Hire</span>
+                </header>
+
+                <form action="" method="post">
+                    <div class="section">
+                        <div class="primary-section">
+                            <div class="form-col">
+                                <label for="selectProfile"
+                                    >Select Profile</label
+                                >
+                                <select
+                                    name="selectProfile"
+                                    id="selectProfile"
+                                    tabindex="1"
+                                >
+                                    <option
+                                        value=""
+                                        selected
+                                        hidden
+                                        disabled
+                                    ></option>
+                                    <option value="">Bruh</option>
+                                </select>
+                            </div>
+
+                            <div class="form-col">
+                                <label for="minAge">Minimum Age</label>
+                                <input
+                                    type="text"
+                                    name="minAge"
+                                    id="minAge"
+                                    tabindex="3"
+                                    maxlength="2"
+                                    oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+                                />
+                            </div>
+
+                            <div class="form-col">
+                                <label for="prefLoc">Preferred Location</label>
+                                <input
+                                    type="text"
+                                    name="prefLoc"
+                                    id="prefLoc"
+                                    tabindex="5"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="primary-section">
+                            <div class="form-col">
+                                <label for="minQual"
+                                    >Minimum Qualification</label
+                                >
+                                <select
+                                    name="minQual"
+                                    id="minQual"
+                                    tabindex="2"
+                                >
+                                    <option
+                                        value=""
+                                        selected
+                                        hidden
+                                        disabled
+                                    ></option>
+                                </select>
+                            </div>
+
+                            <div class="form-col">
+                                <label for="maxAge">Maximum Age</label>
+                                <input
+                                    type="text"
+                                    name="maxAge"
+                                    id="maxAge"
+                                    tabindex="4"
+                                    maxlength="2"
+                                    oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+                                />
+                            </div>
+
+                            <div class="form-col">
+                                <label for="candidateCount"
+                                    >Number of Candidates Required</label
+                                >
+                                <input
+                                    type="text"
+                                    name="candidateCount"
+                                    id="candidateCount"
+                                    tabindex="6"
+                                    maxlength="4"
+                                    oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button section">
+                        <button type="submit">
+                            Submit Request<i
+                                class="fa-solid fa-arrow-right"
+                            ></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+        <script src="js/classSelect.js"></script>
+    </body>
+</html>

@@ -1,6 +1,7 @@
 * {
     font-family: Poppins;
     color: #ddedf8;
+    cursor: url('../img/customCursor32.png'), auto;
 }
 
 body {
@@ -12,6 +13,8 @@ body {
     height: 100vh;
     width: 100vw;
     overflow: hidden;
+    -moz-user-select: none;
+    user-select: none;
 }
 
 main {
@@ -41,6 +44,8 @@ button {
 .img-section:focus,
 input:focus,
 input:hover,
+textarea:focus,
+textarea:hover,
 button:focus,
 button:hover {
     outline: none;
@@ -49,7 +54,7 @@ button:hover {
 
 button:focus,
 button:hover {
-    box-shadow: 0 0 1rem #2eea7c;
+    box-shadow: 0 0 1rem #277eba;
 }
 
 .profileSection {
@@ -57,7 +62,7 @@ button:hover {
     display: flex;
     flex-direction: column;
     padding-inline: 5rem;
-    width: 80%;
+    width: 75%;
     header {
         display: flex;
         flex-direction: row;
@@ -72,12 +77,13 @@ button:hover {
         }
         button {
             font-size: 16px;
-            border-color: #27b992;
+            border-color: #277eba;
             padding: 0.5rem 1.5rem;
         }
     }
 
     form {
+        overflow-x: hidden;
         border: 0.25rem double #277ebacc;
         display: flex;
         padding: 2rem 1rem;
@@ -133,11 +139,77 @@ button:hover {
             display: flex;
             flex-direction: row;
             justify-content: center;
-            padding: rem;
+            display: flex;
+            .primary-section {
+                flex-direction: column;
+                width: 50%;
+                padding-top: 1rem;
+                .form-col {
+                    display: flex;
+                    flex-direction: column;
+                    padding-inline: 1rem;
+                    label {
+                        font-size: 16px;
+                        font-weight: 500;
+                        padding: 0.5rem;
+                    }
+                    input:not([type='file']),
+                    select {
+                        background-color: transparent;
+                        border: 2px solid #277eba;
+                        border-radius: 0.5rem;
+                        font-size: 18px;
+                        padding: 1rem;
+                        option {
+                            background-color: #277eba;
+                            border: none;
+                        }
+                        option:hover {
+                            background-color: #9acaea;
+                            color: #277eba;
+                        }
+                    }
+
+                    /* post-a-job min nd max salary */
+                    div#salary {
+                        display: flex;
+                        flex-direction: row;
+                        width: 100%;
+                        gap: 1rem;
+                        input {
+                            width: 45%;
+                        }
+                    }
+                }
+            }
+            .desc-section {
+                display: flex;
+                flex-direction: column;
+                padding-inline: 1rem;
+                width: 100%;
+                label {
+                    font-size: 16px;
+                    font-weight: 500;
+                    padding: 0.5rem;
+                }
+                textarea {
+                    background-color: transparent;
+                    border: 2px solid #277eba;
+                    border-radius: 0.5rem;
+                    font-size: 18px;
+                    padding-inline: 1rem;
+                    resize: none;
+                }
+            }
             button {
                 padding: 1rem;
-                margin-inline: 1rem;
+                margin: 1rem;
                 width: 25%;
+                i {
+                    margin-inline: 0.5rem;
+                    transition: all 4s ease-in-out;
+                    animation: extend 2s infinite alternate;
+                }
             }
             button:first-child {
                 border-color: #ac2d24;
@@ -153,32 +225,11 @@ button:hover {
             button:last-child:focus {
                 box-shadow: 0 0 1rem #2eea7c;
             }
-            .primary-section {
-                display: flex;
-                flex-direction: column;
-                width: 50%;
-                .form-col {
-                    display: flex;
-                    flex-direction: column;
-                    padding: 1rem;
-                    label {
-                        font-size: 16px;
-                        font-weight: 500;
-                        padding: 0.5rem;
-                    }
-                    input:not([type='file']) {
-                        background-color: transparent;
-                        border: 2px solid #277eba;
-                        border-radius: 0.5rem;
-                        font-size: 18px;
-                        padding: 1rem;
-                    }
-                }
-            }
         }
 
         #btnSection {
             display: none;
+            padding: 0;
         }
     }
 }
@@ -187,4 +238,13 @@ button:hover {
     display: flex;
     flex-direction: column;
     margin-bottom: 1rem;
+}
+
+@keyframes extend {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(100%);
+    }
 }

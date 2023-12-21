@@ -1,0 +1,12 @@
+@keyframes extend {
+    from {
+        transform: translateX(-50%);
+    }
+    to {
+        transform: translateX(50%);
+    }
+}
+
+button {
+    transition: extend 5s infinite ;
+}

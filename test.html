@@ -1,42 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style>
+            body {
+                font-family: 'Arial', sans-serif;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+            }
 
-    .image-container {
-      text-align: center;
-    }
+            .image-container {
+                text-align: center;
+            }
 
-    .image-container img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 5px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
+            .image-container img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 5px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
 
-    .image-container p {
-      margin: 10px 0 0;
-      color: #333;
-    }
-  </style>
-  <title>Centered Image with Alt Text</title>
-</head>
-<body>
+            .image-container p {
+                margin: 10px 0 0;
+                color: #333;
+            }
+        </style>
+        <title>Centered Image with Alt Text</title>
+    </head>
+    <body>
+        <div class="image-container">
+            <img src="your-image-url.jpg" alt="Your Image Alt Text" />
+            <p>Your Image Alt Text</p>
+        </div>
 
-  <div class="image-container">
-    <img src="your-image-url.jpg" alt="Your Image Alt Text">
-    <p>Your Image Alt Text</p>
-  </div>
-
-</body>
+        <label for="skills">Skills Required</label>
+        <input
+            type="text"
+            name="skills"
+            id="skills"
+            list="skillSet"
+            tabindex="3"
+        />
+        <datalist id="skillSet">
+            <option value="Bruh"></option>
+            <option value="Nah"></option>
+            <option value="this"></option>
+            <option value="works"></option>
+        </datalist>
+    </body>
 </html>

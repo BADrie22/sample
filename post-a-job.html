@@ -12,15 +12,8 @@
             rel="stylesheet"
         />
         <link rel="stylesheet" href="css/profile.css" />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-            integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-        />
     </head>
-    <body onload="classSelect('profile')">
+    <body onload="classSelect('jobs')">
         <div id="navbarContainer"></div>
 
         <main>
@@ -29,34 +22,46 @@
             <div class="profileSection">
                 <header style="height: 10%;">
                     <span id="spannable">Job Details</span>
-                    <button type="button" id="editProfileBtn">
+                    <button
+                        type="button"
+                        id="editProfileBtn"
+                        onclick="document.getElementById('spannable').innerText = 'Edit Job Details'"
+                    >
                         Edit Details
                     </button>
                 </header>
 
-                <form action="" method="post">
-
+                <form action="" method="post" autocomplete="off">
                     <div class="section">
                         <div class="primary-section">
                             <div class="form-col">
-                                <label for="compName">Company Name</label>
+                                <label for="jobTitle">Job Title</label>
                                 <input
                                     type="text"
-                                    name="compName"
-                                    id="compName"
-                                    tabindex="2"
+                                    name="jobTitle"
+                                    id="jobTitle"
+                                    tabindex="1"
                                     disabled
                                 />
                             </div>
                             <div class="form-col">
-                                <label for="compName">Company Name</label>
+                                <label for="skills">Skills Required</label>
                                 <input
                                     type="text"
-                                    name="compName"
-                                    id="compName"
-                                    tabindex="2"
+                                    name="skills"
+                                    id="skills"
+                                    list="skillSet"
+                                    tabindex="3"
                                     disabled
                                 />
+                                <datalist id="skillSet">
+                                    <option value="HTML"></option>
+                                    <option value="CSS"></option>
+                                    <option value="C"></option>
+                                    <option value="C++"></option>
+                                    <option value="C#"></option>
+                                    <option value="JS"></option>
+                                </datalist>
                             </div>
                             <div class="form-col">
                                 <label for="autocompletePlaces">Location</label>
@@ -64,72 +69,127 @@
                                     type="text"
                                     name="location"
                                     id="autocompletePlaces"
-                                    tabindex="3"
-                                    disabled
-                                />
-                            </div>
-                            <div class="form-col">
-                                <label for="compURL">Website URL</label>
-                                <input
-                                    type="url"
-                                    name="compURL"
-                                    id="compURL"
-                                    tabindex="4"
-                                    disabled
-                                />
-                            </div>
-                        </div>
-
-                        <div class="primary-section">
-                            <div class="form-col">
-                                <label for="contactPerson"
-                                    >Contact Person Name</label
-                                >
-                                <input
-                                    type="text"
-                                    name="contactPerson"
-                                    id="contactPerson"
                                     tabindex="6"
                                     disabled
                                 />
                             </div>
                             <div class="form-col">
-                                <label for="designation">Designation</label>
+                                <label for="jobType">Job Type</label>
                                 <input
                                     type="text"
-                                    name="designation"
-                                    id="designation"
+                                    name="jobType"
+                                    id="jobType"
+                                    tabindex="8"
+                                    list="type"
+                                    disabled
+                                />
+                                <datalist id="type">
+                                    <option value="Full-time"></option>
+                                    <option value="Part-time"></option>
+                                    <option value="No-time"></option>
+                                </datalist>
+                            </div>
+                        </div>
+
+                        <div class="primary-section">
+                            <div class="form-col">
+                                <label for="vacancy">Number of Vacancies</label>
+                                <input
+                                    type="text"
+                                    name="vacancy"
+                                    id="vacancy"
+                                    tabindex="2"
+                                    disabled
+                                    maxlength="4"
+                                    oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+                                />
+                            </div>
+                            <div class="form-col">
+                                <!-- Min and Max salary -->
+                                <label for="salary">Salary Range</label>
+                                <div id="salary">
+                                    <input
+                                        type="text"
+                                        name="minSal"
+                                        id="minSal"
+                                        tabindex="4"
+                                        disabled
+                                        maxlength="7"
+                                        oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+                                        placeholder="Min. "
+                                    />
+
+                                    <input
+                                        type="text"
+                                        name="maxSal"
+                                        id="maxSal"
+                                        tabindex="5"
+                                        disabled
+                                        maxlength="7"
+                                        oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+                                        placeholder="Max. "
+                                    />
+                                </div>
+                            </div>
+                            <div class="form-col">
+                                <label for="education"
+                                    >Education Required</label
+                                >
+                                <input
+                                    type="text"
+                                    name="education"
+                                    id="education"
                                     tabindex="7"
                                     disabled
                                 />
                             </div>
                             <div class="form-col">
-                                <label for="compSector">Sector</label>
+                                <label for="jobMode">Mode</label>
                                 <input
                                     type="text"
-                                    name="compSector"
-                                    id="compSector"
-                                    tabindex="8"
+                                    name="jobMode"
+                                    id="jobMode"
+                                    tabindex="9"
+                                    list="modes"
                                     disabled
                                 />
+                                <datalist id="modes">
+                                    <option value="Remote"></option>
+                                </datalist>
                             </div>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <div class="desc-section">
+                            <label for="jobDesc">Job Description</label>
+                            <textarea
+                                name="jobDesc"
+                                id="jobDesc"
+                                rows="3"
+                                tabindex="10"
+                                disabled
+                            ></textarea>
                         </div>
                     </div>
 
                     <div class="section" id="btnSection">
-                        <button type="reset" tabindex="10" id="discard">
+                        <button
+                            type="reset"
+                            tabindex="12"
+                            id="discard"
+                            onclick="document.getElementById('spannable').innerText = 'Job Details'"
+                        >
                             Discard
                         </button>
-                        <button type="submit" tabindex="9">Save</button>
+                        <button type="submit" tabindex="11">Save</button>
                     </div>
                 </form>
             </div>
         </main>
 
-        <script>
-            
-        </script>
+        <script></script>
 
         <script src="js/classSelect.js"></script>
+        <script src="js/salaryRange.js"></script>
     </body>
 </html>

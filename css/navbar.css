@@ -2,27 +2,31 @@
     color: #ddedf8;
     ::-webkit-scrollbar {
         display: none;
-    }    
+    }
 }
 
-#ham-menu {
-    display: none;
-    cursor: pointer;
-}
-
-nav {
+div.nav-container {
     margin: auto;
+    display: flex;
+    flex-direction: row;
     position: absolute;
     z-index: 1;
     height: 100%;
     width: 20%;
-    display: flex;
-    flex-direction: column;
-    font-size: 16px;
-    text-align: center;
-    padding: 1rem;
     background: #03090dcc;
     box-shadow: 0.25rem 0 1rem #121212;
+    nav {
+        display: flex;
+        flex-direction: column;
+        font-size: 16px;
+        text-align: center;
+        padding: 1rem;
+    }
+    button {
+        display: none;
+        box-shadow: none;
+        border: none;
+    }
 }
 
 .main-logo {
@@ -35,7 +39,7 @@ nav {
 .nav-options {
     display: flex;
     flex-direction: column;
-    margin: 1rem;
+    margin: auto;
     svg {
         width: 15%;
         vertical-align: middle;
@@ -55,10 +59,9 @@ nav {
         white-space: nowrap;
         width: 100%;
     }
-
-    .active {
-        background: linear-gradient(135deg, #143F5D,  #277eba, #89C1E6);
-        color: rgb(39, 126, 186);
+    
+    a.active {
+        background-color: #277eba;
     }
 }
 
@@ -73,13 +76,14 @@ nav {
     border-radius: 0.25rem;
     margin: auto;
     font-weight: 600;
+    box-shadow: 0 0 2rem #03090dcc;
+    outline: none;
 }
 
 a:hover {
-    background-color: #277eba;
+    background-color: #9acaea;
 }
 .logout-button:hover {
-    outline: none;
     box-shadow: 0 0 1rem #277eba;
 }
 

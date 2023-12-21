@@ -29,12 +29,16 @@
             <div class="profileSection">
                 <header>
                     <span id="spannable">Your Profile</span>
-                    <button type="button" id="editProfileBtn">
+                    <button
+                        type="button"
+                        id="editProfileBtn"
+                        onclick="document.getElementById('spannable').innerText = 'Edit Profile'"
+                    >
                         Edit Profile
                     </button>
                 </header>
 
-                <form action="" method="post">
+                <form action="" method="post"  autocomplete="off">
                     <div class="img-section">
                         <input
                             type="file"
@@ -45,7 +49,7 @@
                             disabled
                         />
                         <img src="./img/Headway.svg" id="imagePreview" alt="" />
-                        <label id="upload">Upload File</label>
+                        <label for="uploadLogo" id="upload">Upload File</label>
                     </div>
 
                     <div class="section">
@@ -120,7 +124,12 @@
                     </div>
 
                     <div class="section" id="btnSection">
-                        <button type="reset" tabindex="10" id="discard">
+                        <button
+                            type="reset"
+                            tabindex="10"
+                            id="discard"
+                            onclick="document.getElementById('spannable').innerText = 'Your Profile'"
+                        >
                             Discard
                         </button>
                         <button type="submit" tabindex="9">Save</button>
@@ -129,10 +138,9 @@
             </div>
         </main>
 
-        <script>
-            
-        </script>
+        <script></script>
 
         <script src="js/classSelect.js"></script>
+        <script src="js/imgPreview.js"></script>
     </body>
 </html>
