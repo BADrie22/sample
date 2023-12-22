@@ -42,6 +42,8 @@ button {
 
 .img-section:hover,
 .img-section:focus,
+select:focus,
+select:hover,
 input:focus,
 input:hover,
 textarea:focus,
@@ -74,6 +76,17 @@ button:hover {
         height: 15%;
         span {
             color: #9acaea;
+        }
+        #dashboard-button {
+            display: flex;
+            gap: 1rem;
+            button:last-child {
+                border-color: #0efe72;
+                &:hover,
+                &:focus {
+                    box-shadow: 0 0 1rem #0efe72;
+                }
+            }
         }
         button {
             font-size: 16px;
@@ -212,18 +225,18 @@ button:hover {
                 }
             }
             button:first-child {
-                border-color: #ac2d24;
+                border-color: #ff4235;
             }
             button:first-child:hover,
             button:first-child:focus {
-                box-shadow: 0 0 1rem #ac2d24;
+                box-shadow: 0 0 1rem #ff4235;
             }
             button:last-child {
-                border-color: #25ad2e;
+                border-color: #0efe72;
             }
             button:last-child:hover,
             button:last-child:focus {
-                box-shadow: 0 0 1rem #2eea7c;
+                box-shadow: 0 0 1rem #0efe72;
             }
         }
 

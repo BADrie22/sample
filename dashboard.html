@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dashboard</title>
+        <link rel="stylesheet" href="css/profile.css" />
+        <link rel="stylesheet" href="css/dashboard.css">
+    </head>
+    <body onload="classSelect('dashboard')">
+        <div id="navbarContainer"></div>
+
+        <main>
+            <div id="spacing"></div>
+            <div class="profileSection">
+                <header>
+                    <span id="spannable">Dashboard</span>
+                    <div id="dashboard-button">
+                        <button
+                            type="button"
+                            onclick="window.location.href = 'post-a-job.html'"
+                        >
+                            Post a Job
+                        </button>
+                        <button type="button">Buy Credits</button>
+                    </div>
+                </header>
+
+                <div class="preview-section">
+                    <div id="sub-section">
+                        <p>Jobs Posted</p>
+                        <span>9999</span>
+                    </div>
+
+                    <div id="sub-section">
+                        <p>Available Credits</p>
+                        <span>9999</span>
+                    </div>
+
+                    <div id="sub-section">
+                        <p>Active Jobs</p>
+                        <span>9999</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <script src="js/classSelect.js"></script>
+    </body>
+</html>

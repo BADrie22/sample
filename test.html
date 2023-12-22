@@ -1,55 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <style>
-            body {
-                font-family: 'Arial', sans-serif;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
-                margin: 0;
-            }
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Datalist with Checkboxes</title>
+    <style>
+        .checkbox-datalist {
+            position: relative;
+            display: inline-block;
+        }
 
-            .image-container {
-                text-align: center;
-            }
+        .checkbox-datalist input[type='text'] {
+            width: 200px;
+        }
 
-            .image-container img {
-                max-width: 100%;
-                height: auto;
-                border-radius: 5px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            }
+        .checkbox-datalist .checkbox-options {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            /* max-height: 150px; */
+            overflow-y: auto;
+            display: none;
+        }
 
-            .image-container p {
-                margin: 10px 0 0;
-                color: #333;
-            }
-        </style>
-        <title>Centered Image with Alt Text</title>
-    </head>
-    <body>
-        <div class="image-container">
-            <img src="your-image-url.jpg" alt="Your Image Alt Text" />
-            <p>Your Image Alt Text</p>
-        </div>
-
-        <label for="skills">Skills Required</label>
+        .checkbox-datalist .checkbox-option {
+            padding: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="checkbox-datalist">
         <input
             type="text"
-            name="skills"
-            id="skills"
-            list="skillSet"
-            tabindex="3"
+            id="checkboxInput"
+            oninput="handleInput(event)"
+            onfocus="displayAllCheckboxes()"
         />
-        <datalist id="skillSet">
-            <option value="Bruh"></option>
-            <option value="Nah"></option>
-            <option value="this"></option>
-            <option value="works"></option>
-        </datalist>
-    </body>
+        <div class="checkbox-options" id="checkboxOptions"></div>
+    </div>
+
+    <script>
+        let selectedOptions = [];
+
+        function handleInput(event) {
+            const inputElement = event.target;
+            const checkboxOptionsContainer = document.getElementById('checkboxOptions');
+
+            // Clear previous options
+            checkboxOptionsContainer.innerHTML = '';
+
+            // Simulated datalist options
+            const datalistOptions = ['HTML', 'Java', 'Javascript', 'CSS', 'CSS3'];
+
+            // Filter options based on user input
+            const filteredOptions = datalistOptions.filter((option) =>
+                option.toLowerCase().includes(inputElement.value.toLowerCase())
+            );
+
+            // Display matching options dynamically with checkboxes
+            filteredOptions.forEach((filteredOption) => {
+                const checkboxOption = createCheckboxOption(filteredOption);
+                checkboxOptionsContainer.appendChild(checkboxOption);
+            });
+
+            if (filteredOptions.length > 0) {
+                // Display the options container
+                checkboxOptionsContainer.style.display = 'block';
+            } else {
+                // Hide the options container if no options match
+                checkboxOptionsContainer.style.display = 'none';
+            }
+        }
+
+        function displayAllCheckboxes() {
+            const inputElement = document.getElementById('checkboxInput');
+            const checkboxOptionsContainer = document.getElementById('checkboxOptions');
+
+            // Simulated datalist options
+            const datalistOptions = ['HTML', 'Java', 'Javascript', 'CSS', 'CSS3'];
+
+            // Clear previous options
+            checkboxOptionsContainer.innerHTML = '';
+
+            // Display all options dynamically with checkboxes
+            datalistOptions.forEach((option) => {
+                const checkboxOption = createCheckboxOption(option);
+                checkboxOptionsContainer.appendChild(checkboxOption);
+            });
+
+            // Display the options container
+            checkboxOptionsContainer.style.display = 'block';
+        }
+
+        function createCheckboxOption(option) {
+            const checkboxOption = document.createElement('div');
+            checkboxOption.className = 'checkbox-option';
+
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.value = option;
+
+            checkboxOption.appendChild(checkbox);
+            checkboxOption.appendChild(document.createTextNode(option));
+
+            checkbox.addEventListener('change', function () {
+                // Handle checkbox change event
+                if (this.checked) {
+                    // Checkbox is checked, add to selected options
+                    selectedOptions.push(this.value);
+                } else {
+                    // Checkbox is unchecked, remove from selected options
+                    const index = selectedOptions.indexOf(this.value);
+                    if (index !== -1) {
+                        selectedOptions.splice(index, 1);
+                    }
+                }
+
+                // Update the input value with selected options
+                document.getElementById('checkboxInput').value = selectedOptions.join(', ');
+            });
+
+            return checkboxOption;
+        }
+    </script>
+</body>
 </html>

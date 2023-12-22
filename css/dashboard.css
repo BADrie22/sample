@@ -1,0 +1,26 @@
+.preview-section {
+    padding: 1rem;
+    border: 1px solid red;
+    display: flex;
+        justify-content: space-between;
+        width: 100%;
+    #sub-section {
+        background-color: #ddedf8;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        text-align: center;
+        border-radius: 1rem;
+        font-weight: 900;
+        p {
+            padding: 0;
+            margin: 5% 0 0;
+            color: #000428;
+            font-size: 24px;
+        }
+        span:last-child {
+            color: #277eba;
+            font-size: 64px;
+        }
+    }
+}

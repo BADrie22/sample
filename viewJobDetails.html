@@ -14,7 +14,14 @@
 
             <div class="profileSection">
                 <header style="height: 10%;">
-                    <span id="spannable">Post Job</span>
+                    <span id="spannable">Job Details</span>
+                    <button
+                        type="button"
+                        id="editProfileBtn"
+                        onclick="document.getElementById('spannable').innerText = 'Edit Job Details'"
+                    >
+                        Edit Details
+                    </button>
                 </header>
 
                 <form action="" method="post" autocomplete="off">
@@ -27,6 +34,7 @@
                                     name="jobTitle"
                                     id="jobTitle"
                                     tabindex="1"
+                                    disabled
                                 />
                             </div>
                             <div class="form-col">
@@ -37,6 +45,7 @@
                                     id="skills"
                                     list="skillSet"
                                     tabindex="3"
+                                    disabled
                                 />
                                 <datalist id="skillSet">
                                     <option value="HTML"></option>
@@ -156,16 +165,16 @@
                         </div>
                     </div>
 
-                    <div class="section" id="btnSection" style="display: flex;">
+                    <div class="section" id="btnSection">
                         <button
                             type="reset"
                             tabindex="12"
                             id="discard"
-                            onclick="window.location.href = '../comp-jobs.html'"
+                            onclick="document.getElementById('spannable').innerText = 'Job Details'"
                         >
                             Discard
                         </button>
-                        <button type="submit" tabindex="11">Save</button>
+                        <button type="submit" tabindex="11">Save Changes</button>
                     </div>
                 </form>
             </div>
