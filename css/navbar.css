@@ -6,6 +6,7 @@
 }
 
 div.nav-container {
+    /* z-index: 999; */
     margin: auto;
     display: flex;
     flex-direction: row;

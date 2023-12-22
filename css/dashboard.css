@@ -28,7 +28,7 @@
     }
 }
 
-#scrollable-contain{
+#scrollable-contain {
     overflow: hidden;
     height: 50vw;
 }
@@ -40,9 +40,12 @@ div.end {
     border-top: 1px solid #277eba;
     font-weight: 600;
     i {
-        rotate: 90deg;
         padding-inline: 1rem;
-        animation: arrowTranslate 2s infinite alternate;
+    }
+    &:hover {
+        i {
+            animation: arrowTranslate 2s infinite alternate;
+        }
     }
 }
 .end:hover {
