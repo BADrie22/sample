@@ -7,6 +7,11 @@
     }
 }
 
-button {
-    transition: extend 5s infinite ;
+@keyframes arrowTranslate {
+    from {
+        transform: translateX(-5%);
+    }
+    to {
+        transform: translateX(10%);
+    }
 }

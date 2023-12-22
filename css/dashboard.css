@@ -1,26 +1,50 @@
 .preview-section {
+    height: 20%;
     padding: 1rem;
-    border: 1px solid red;
     display: flex;
-        justify-content: space-between;
-        width: 100%;
+    justify-content: space-between;
+    width: 100%;
+
     #sub-section {
+        width: 25%;
         background-color: #ddedf8;
-        display: flex;
         flex-direction: column;
         padding: 1rem;
         text-align: center;
         border-radius: 1rem;
         font-weight: 900;
+        align-content: center;
+
         p {
-            padding: 0;
-            margin: 5% 0 0;
+            margin: 0%;
             color: #000428;
-            font-size: 24px;
+            font-size: 20px;
         }
-        span:last-child {
+
+        span {
             color: #277eba;
-            font-size: 64px;
+            font-size: 56px;
         }
     }
+}
+
+#scrollable-contain{
+    overflow: hidden;
+    height: 50vw;
+}
+
+div.end {
+    bottom: 0;
+    padding-top: 0.5rem;
+    text-align: center;
+    border-top: 1px solid #277eba;
+    font-weight: 600;
+    i {
+        rotate: 90deg;
+        padding-inline: 1rem;
+        animation: arrowTranslate 2s infinite alternate;
+    }
+}
+.end:hover {
+    text-shadow: 0 0 0.5rem #277eba;
 }

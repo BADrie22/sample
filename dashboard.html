@@ -5,10 +5,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Dashboard</title>
         <link rel="stylesheet" href="css/profile.css" />
-        <link rel="stylesheet" href="css/dashboard.css">
+        <link rel="stylesheet" href="css/dashboard.css" />
+        <link rel="stylesheet" href="css/grid.css" />
+        <link rel="stylesheet" href="css/keyframes.css" />
     </head>
     <body onload="classSelect('dashboard')">
+
         <div id="navbarContainer"></div>
+        <div id="creditsContainer"></div>
 
         <main>
             <div id="spacing"></div>
@@ -22,7 +26,7 @@
                         >
                             Post a Job
                         </button>
-                        <button type="button">Buy Credits</button>
+                        <button type="button" id="creditsBtn">Buy Credits</button>
                     </div>
                 </header>
 
@@ -42,9 +46,50 @@
                         <span>9999</span>
                     </div>
                 </div>
+
+                <div class="grid-box" style="height: 45vh">
+                    <div class="title">
+                        <div>Sl No.</div>
+                        <div>Job Title</div>
+                        <div>Salary Offered</div>
+                        <div>Applications received</div>
+                        <div id="status">Status</div>
+                    </div>
+
+                    <div id="scrollable-contain">
+                        <div class="contents">
+                            <div name="index">01</div>
+                            <div name="jobTitle">
+                                Fullstack Graphic Designer
+                            </div>
+                            <div name="salary">₹ 99,99,999.99</div>
+                            <div name="receivedApplications" id="app-receive">
+                                1
+                            </div>
+                            <div name="status">Closed</div>
+                        </div>
+
+                        <div class="contents">
+                            <div name="index">02</div>
+                            <div name="jobTitle">
+                                Business Development Representative
+                            </div>
+                            <div name="salary">₹ 0.99</div>
+                            <div name="receivedApplications" id="app-receive">
+                                100000
+                            </div>
+                            <div name="status">Active</div>
+                        </div>
+                    </div>
+
+                    <div class="end" onclick="window.location.href = 'comp-jobs.html'">
+                        View All<i class="fa-solid fa-angles-right"></i>
+                    </div>
+                </div>
             </div>
         </main>
 
+        <!-- <script src="js/include.js"></script> -->
         <script src="js/classSelect.js"></script>
     </body>
 </html>

@@ -34,9 +34,6 @@
         text-align: justify;
         gap: 1rem;
         white-space: nowrap;
-        div {
-            /* border: 1px solid #B93127; */
-        }
         div#app-receive {
             display: grid;
             grid-template-columns: repeat(2, 1fr);

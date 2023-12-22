@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const uploadLabel = document.getElementById('upload')
     const inputs = document.querySelectorAll('input')
     const textArea = document.getElementById('jobDesc')
+    const creditsBtn = document.getElementById('creditsBtn')
 
     // Fetch and load the navbar asynchronously
     fetch('./navbar.html')
@@ -28,6 +29,22 @@ document.addEventListener('DOMContentLoaded', function () {
         .catch((error) => {
             console.error('Fetch error:', error)
         })
+
+    creditsBtn.addEventListener('click', () => {
+        fetch('./buyCredits.html')
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok')
+                }
+                return response.text()
+            })
+            .then((data) => {
+                document.getElementById('creditsContainer').innerHTML = data
+            })
+            .catch((error) => {
+                console.error('Fetch error for buyCredits.html:', error)
+            })
+    })
 
     // Event listeners for edit and discard buttons
     editButton.addEventListener('click', () => setEditMode(true))

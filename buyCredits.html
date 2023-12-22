@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Buy Credits</title>
+        <link rel="stylesheet" href="css/dashboard.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+            integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+    </head>
+    <body>
+        <style>
+            #credits-form {
+                background-color: #121212a0;
+                width: 100vw;
+                height: 100vh; /* Set height to cover the entire viewport */
+                position: fixed;
+                top: 0;
+                left: 0;
+                backdrop-filter: blur(10px);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            form {
+                position: fixed;
+                color: #9acaea;
+                position: fixed;
+                width: 50%;
+                background-color: #03090dcc;
+                padding: 1rem;
+                display: flex;
+                border-radius: 1rem;
+                font-size: 18px;
+                box-shadow: 0 1rem 3rem #03090dcc;
+
+                input,
+                button {
+                    padding: 1rem;
+                    background-color: transparent;
+                    border-radius: 0.5rem;
+                    cursor: pointer;
+                    font-weight: 600;
+                    transition: all 0.5s ease-in-out;
+                    &:focus,
+                    &:hover {
+                        outline: none;
+                        box-shadow: 0 0 1rem #004e92;
+                    }
+                }
+
+                .form-col {
+                    width: 50%;
+                    display: flex;
+                    flex-direction: column;
+                    padding: 1rem;
+                    text-align: justify;
+                    .form-row:first {
+                        height: 75%;
+                    }
+                    .form-col:last-child {
+                        height: 25%;
+                    }
+                    #form-input {
+                        padding: 1rem 0;
+                        justify-content: flex-start;
+                        display: flex;
+                        flex-direction: column;
+                        label {
+                            color: #f2f2f2;
+                            margin-inline: 0.5rem;
+                        }
+                        input {
+                            font-size: 24px;
+                            color: #9acaea;
+                            border: 2px solid #9acaea;
+                        }
+                    }
+
+                    #checkout {
+                        /* padding: 1rem; */
+                        background-color: #9acaea;
+                        border-radius: 1rem;
+                        color: #000428;
+                        text-align: center;
+                        #row {
+                            padding-inline: 2rem;
+                            display: flex;
+                            flex-direction: row;
+                            font-weight: 900;
+                            justify-content: space-between;
+                            span {
+                                font-weight: 500;
+                            }
+                        }
+                        hr {
+                            width: 85%;
+                        }
+                        button {
+                            margin: 1rem 0;
+                            width: 85%;
+                            border-color: #000428;
+                        }
+                        #last-row {
+                            display: flex;
+                            justify-content: center;
+                            a {
+                                text-decoration: none;
+                                color: #000428;
+                            }
+                        }
+                    }
+                    i {
+                        padding-inline-end: 0.5rem;
+                    }
+                }
+            }
+        </style>
+        <div id="credits-form">
+            <form action="" method="post">
+                <div class="form-col">
+                    <div class="form-row">
+                        <p>
+                            By paying up, you have agreed that you have
+                            consented blah blah. Any amount paid upfront isn't
+                            refundable. Please wait for the transaction amount
+                            to be reflected as your bank may take some time to
+                            verify requests.
+                        </p>
+                    </div>
+
+                    <div id="form-input">
+                        <label for="creditInput">Enter the credit</label>
+                        <input type="text" id="creditInput" value="100" />
+                    </div>
+                </div>
+
+                <div class="form-col">
+                    <div id="checkout">
+                        <h1>Checkout</h1>
+                        <div id="row">
+                            Total Credit: <span id="balance">100</span>
+                        </div>
+
+                        <div id="row">
+                            Amount per Credit: <span id="creditScore">10</span>
+                        </div>
+
+                        <hr />
+
+                        <div id="row">
+                            Total Payable: <span id="totalBal">1000</span>
+                        </div>
+
+                        <button type="submit">
+                            <i class="fa-solid fa-money-check-dollar fa-lg"></i
+                            >Pay ₹<span id="totalBal">1000</span>
+                        </button>
+
+                        <div id="last-row">
+                            <a href="dashboard.html"
+                                ><i class="fa-solid fa-xmark"></i>Cancel</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
