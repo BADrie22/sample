@@ -4,124 +4,11 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Buy Credits</title>
-        <link rel="stylesheet" href="css/dashboard.css" />
+        <link rel="stylesheet" href="css/credits.css" />
     </head>
     <body>
-        <style>
-            #credits-form {
-                /* z-index: 999; */
-                background-color: #121212a0;
-                width: 100vw;
-                height: 100vh; /* Set height to cover the entire viewport */
-                position: fixed;
-                top: 0;
-                left: 0;
-                backdrop-filter: blur(10px);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            form {
-                position: fixed;
-                color: #9acaea;
-                position: fixed;
-                width: 50%;
-                background-color: #03090dcc;
-                padding: 1rem;
-                display: flex;
-                border-radius: 1rem;
-                font-size: 18px;
-                box-shadow: 0 1rem 3rem #03090dcc;
-
-                input,
-                button {
-                    padding: 1rem;
-                    background-color: transparent;
-                    border-radius: 0.5rem;
-                    cursor: pointer;
-                    font-weight: 600;
-                    transition: all 0.5s ease-in-out;
-                    &:focus,
-                    &:hover {
-                        outline: none;
-                        box-shadow: 0 0 1rem #004e92;
-                    }
-                }
-
-                .form-col {
-                    width: 50%;
-                    display: flex;
-                    flex-direction: column;
-                    padding: 1rem;
-                    text-align: justify;
-                    .form-row:first {
-                        height: 75%;
-                    }
-                    .form-col:last-child {
-                        height: 25%;
-                    }
-                    #form-input {
-                        padding: 1rem 0;
-                        justify-content: flex-start;
-                        display: flex;
-                        flex-direction: column;
-                        label {
-                            color: #f2f2f2;
-                            margin-inline: 0.5rem;
-                        }
-                        input {
-                            font-size: 24px;
-                            color: #9acaea;
-                            border: 2px solid #9acaea;
-                        }
-                    }
-
-                    #checkout {
-                        padding: 1rem;
-                        background-color: #9acaea;
-                        border-radius: 1rem;
-                        text-align: center;
-                        h1, #row, span, button, i {
-                            color: #000428;
-                        }
-                        #row {
-                            /* padding-inline: 2rem; */
-                            display: flex;
-                            flex-direction: row;
-                            font-weight: 900;
-                            font-size: 18px;
-                            justify-content: space-between;
-                            span {
-                                color: #000428;
-                                font-weight: 500;
-                            }
-                        }
-                        hr {
-                            color: #000428;
-                            width: 85%;
-                        }
-                        button {
-                            margin: 1rem 0;
-                            width: 85%;
-                            border-color: #000428;
-                        }
-                        #last-row {
-                            display: flex;
-                            justify-content: center;
-                            a {
-                                text-decoration: none;
-                                color: #000428;
-                            }
-                        }
-                    }
-                    i {
-                        padding-inline-end: 0.5rem;
-                    }
-                }
-            }
-        </style>
         <div id="credits-form">
-            <form action="" method="post">
+            <form action="" method="post" autocomplete="off">
                 <div class="form-col">
                     <div class="form-row">
                         <p>
@@ -135,7 +22,29 @@
 
                     <div id="form-input">
                         <label for="creditInput">Enter the credit</label>
-                        <input type="text" id="creditInput" value="100" />
+                        <input
+                            type="text"
+                            id="creditInput"
+                            pattern="[0-9]{1,5}"
+                            value="100"
+                            maxlength="5"
+                            oninput="changeVal()"
+                        />
+                    </div>
+
+                    <div class="chipsets">
+                        <div id="chips" onclick="addVal(this)">
+                            <i class="fa-solid fa-plus"></i>100
+                        </div>
+                        <div id="chips" onclick="addVal(this)">
+                            <i class="fa-solid fa-plus"></i>200
+                        </div>
+                        <div id="chips" onclick="addVal(this)">
+                            <i class="fa-solid fa-plus"></i>500
+                        </div>
+                        <div id="chips" onclick="addVal(this)">
+                            <i class="fa-solid fa-plus"></i>2000
+                        </div>
                     </div>
                 </div>
 
@@ -147,18 +56,18 @@
                         </div>
 
                         <div id="row">
-                            Amount per Credit: <span id="creditScore">10</span>
+                            Amount per Credit: <span id="creditScore">1</span>
                         </div>
 
                         <hr />
 
                         <div id="row">
-                            Total Payable: <span id="totalBal">1000</span>
+                            Total Payable: <span id="totalBal">100</span>
                         </div>
 
-                        <button type="submit">
+                        <button type="submit" id="payBtn">
                             <i class="fa-solid fa-money-check-dollar fa-lg"></i
-                            >Pay ₹<span id="totalBal">1000</span>
+                            >Pay ₹<span id="totalBal">100</span>
                         </button>
 
                         <div id="last-row">

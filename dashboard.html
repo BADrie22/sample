@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="css/profile.css" />
         <link rel="stylesheet" href="css/dashboard.css" />
         <link rel="stylesheet" href="css/grid.css" />
-        <link rel="stylesheet" href="css/keyframes.css" />
+        <!-- <link rel="stylesheet" href="css/keyframes.css" /> -->
     </head>
     <body onload="classSelect('dashboard')">
         <div id="navbarContainer"></div>
@@ -21,11 +21,12 @@
                     <div id="dashboard-button">
                         <button
                             type="button"
+                            tabindex="1"
                             onclick="window.location.href = 'post-a-job.html'"
                         >
                             Post a Job
                         </button>
-                        <button type="button" id="creditsBtn">
+                        <button type="button" id="creditsBtn" tabindex="2">
                             Buy Credits
                         </button>
                     </div>
@@ -93,8 +94,6 @@
                 </div>
             </div>
         </main>
-
-        <!-- <script src="js/include.js"></script> -->
         <script src="js/classSelect.js"></script>
     </body>
 </html>
