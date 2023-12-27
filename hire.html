@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Hire</title>
+        <link rel="stylesheet" href="css/profile.css" />
+        <link rel="stylesheet" href="css/dashboard.css" />
+        <link rel="stylesheet" href="css/grid-jobs.css" />
+        <link rel="stylesheet" href="css/keyframes.css" />
+    </head>
+    <body onload="classSelect('dashboard')">
+        <div id="navbarContainer"></div>
+        <div id="creditsContainer"></div>
+
+        <main>
+            <div id="spacing"></div>
+            <div class="profileSection">
+                <header>
+                    <span id="spannable">Hire Candidate</span>
+                    <div id="dashboard-button">
+                        <button
+                            type="button"
+                            tabindex="1"
+                            onclick="window.location.href = 'hireCandidate.html'"
+                        >
+                            Hire Candidates
+                        </button>
+                        <button type="button" id="creditsBtn" tabindex="2">
+                            Buy Credits
+                        </button>
+                    </div>
+                </header>
+
+                <div class="preview-section">
+                    <div id="sub-section">
+                        <p>Available Credits</p>
+                        <span>9999</span>
+                    </div>
+
+                    <div id="sub-section">
+                        <p>Downloaded Profiles</p>
+                        <span>9999</span>
+                    </div>
+                </div>
+
+                <div class="grid-box" style="height: 45vh">
+                    <div class="title">
+                        <div>Sl No.</div>
+                        <div>Name</div>
+                        <div id="centered">Education</div>
+                        <div>Job Profile</div>
+                        <div id="centered">Age</div>
+                    </div>
+
+                    <div id="scrollable-contain">
+                        <div class="contents">
+                            <div name="index">01</div>
+                            <div name="studentName">Noiice</div>
+                            <div name="education" id="centered">Bruh</div>
+                            <div name="jobProfile">
+                                Business Development Representative
+                            </div>
+                            <div name="age" id="centered">121</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script src="js/classSelect.js"></script>
+    </body>
+</html>

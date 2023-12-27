@@ -6,7 +6,6 @@
 }
 
 div.nav-container {
-    /* z-index: 999; */
     margin: auto;
     display: flex;
     flex-direction: row;
@@ -22,70 +21,75 @@ div.nav-container {
         font-size: 16px;
         text-align: center;
         padding: 1rem;
+        .main-logo {
+            padding: 1rem;
+            img {
+                max-width: 100%;
+            }
+        }
+        .nav-options {
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            svg {
+                width: 15%;
+                vertical-align: middle;
+                padding: 0 0.5rem;
+            }
+        }
+
+        #menu-item {
+            display: flex;
+            flex-direction: row;
+
+            a {
+                border-radius: 0.25rem;
+                padding: 1rem 0.5rem;
+                text-align: start;
+                text-decoration: none;
+                white-space: nowrap;
+                width: 100%;
+                &:hover {
+                    background-color: #9acaea;
+                }
+                &.active {
+                    background-color: #277eba;
+                }
+            }
+        }
+
+        #logout-button {
+            background-color: transparent;
+            border: 2px solid #277eba;
+            border-radius: 0.25rem;
+            color: #277eba;
+            cursor: pointer;
+            width: auto;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            margin: auto;
+            font-weight: 600;
+            box-shadow: 0 0 2rem #03090dcc;
+            outline: none;
+            i {
+                color: #277eba;
+            }
+            &:hover {
+                box-shadow: 0 0 1rem #277eba;
+            }
+        }
     }
-    button {
-        display: none;
+    button,
+    i {
+        /* display: none; */
+        cursor: pointer;
         box-shadow: none;
         border: none;
     }
 }
 
-.main-logo {
-    padding: 1rem;
-    img {
-        max-width: 100%;
-    }
-}
-
-.nav-options {
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    svg {
-        width: 15%;
-        vertical-align: middle;
-        padding: 0 0.5rem;
-    }
-}
-
-#menu-item {
-    display: flex;
-    flex-direction: row;
-
-    a {
-        border-radius: 0.25rem;
-        padding: 1rem 0.5rem;
-        text-align: start;
-        text-decoration: none;
-        white-space: nowrap;
-        width: 100%;
-    }
-    
-    a.active {
-        background-color: #277eba;
-    }
-}
-
-.logout-button {
-    background-color: transparent;
-    border: 2px solid #277eba;
-    border-radius: 0.25rem;
-    color: #277eba;
-    cursor: pointer;
-    width: 80%;
-    padding: 0.5rem;
-    border-radius: 0.25rem;
-    margin: auto;
-    font-weight: 600;
-    box-shadow: 0 0 2rem #03090dcc;
-    outline: none;
-}
-
-a:hover {
-    background-color: #9acaea;
-}
-.logout-button:hover {
-    box-shadow: 0 0 1rem #277eba;
+div.nav-container .hide label {
+    display: none;
 }
 
 /* Extra small devices (phones) */

@@ -28,15 +28,17 @@
     .title,
     .contents {
         display: grid;
-        grid-template-columns: 0.5fr 3.5fr 1fr 2fr 1fr;
+        grid-template-columns: 0.5fr 2fr 1fr 3fr 0.5fr;
         text-align: justify;
-        gap: 1rem;
+        div {
+            /* border: 1px solid red; */
+        }
         white-space: nowrap;
         #salary {
             display: flex;
             justify-content: space-around;
         }
-        #education {
+        #centered {
             text-align: center;
         }
         div#app-receive {
@@ -75,7 +77,5 @@
 
 /* Extra large devices (extra large desktops) */
 @media only screen and (min-width: 1200px) {
-    .contents {
-        gap: 2.5%;
-    }
+
 }

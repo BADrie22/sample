@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Advanced Search</title>
+    </head>
+    <body>
+        <style>
+            div.search {
+                user-select: none;
+                display: flex;
+                flex-direction: row;
+                position: fixed;
+                background-color: #12121275;
+                padding: 0.5rem;
+                border: 0.25rem double #277eba;
+                border-radius: 1rem;
+                .sidebar {
+                    border-radius: 1.25rem;
+                    border: 0.1rem solid #277eba;
+                    list-style: none;
+                    display: flex;
+                    flex-direction: column;
+                    a {
+                        text-decoration: none;
+                        padding: 1rem;
+                        color: #121212;
+                        &#active {
+                            border-radius: 1rem;
+                            background-color: #277eba;
+                            color: #121212;
+                            font-weight: 600;
+                        }
+                    }
+                }
+
+                .selectskills {
+                    display: flex;
+                    flex-direction: column;
+                    margin-left: 1rem;
+                    width: 70%;
+                    input[type='search'] {
+                        background-color: transparent;
+                        padding: 1rem;
+                        color: #277eba;
+                        outline: none;
+                        border-radius: 1rem;
+                        border: 0.1rem solid #277eba;
+                        font-size: 16px;
+                        font-weight: 600;
+                    }
+                    .chkbox-list {
+                        padding: 1rem 0;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: flex-start;
+                        flex-wrap: wrap;
+                        .chkbox {
+                            margin: 0.1rem;
+                            padding: 0.5rem;
+                            border-radius: 0.5rem;
+                            cursor: pointer;
+                            color: #277eba;
+                            transition: background-color 0.3s ease;
+                            border: 1px solid #277eba;
+                            font-weight: 600;
+                        }
+                        input[type='checkbox'] {
+                            display: none;
+                        }
+                        input[type='checkbox']:checked + .chkbox {
+                            background-color: #277eba;
+                            color: #121212;
+                        }
+                    }
+                    .button-section {
+                        display: flex;
+                        justify-content: flex-end;
+                        button {
+                            border: 0.1rem solid #277eba;
+                            margin: 0.1rem;
+                            border-radius: 1rem;
+                            padding: 0.5rem 1rem;
+                            background-color: transparent;
+                            color: #277eba;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+        </style>
+
+        <div class="search">
+            <div class="sidebar" id="sidebar">
+                <a href="#" id="active">Skills</a>
+                <a href="#">Degree</a>
+                <a href="#">Specialization</a>
+                <a href="#">Year of Passing</a>
+            </div>
+            <div class="selectskills">
+                <input
+                    type="search"
+                    name="search"
+                    id="search"
+                    placeholder="Search"
+                />
+                <div class="chkbox-list">
+                    <input
+                        type="checkbox"
+                        name="skillCheck1"
+                        id="skillCheck1"
+                    />
+                    <div class="chkbox" onclick="toggleCheckbox(this)">
+                        HTML
+                    </div>
+                    <input
+                        type="checkbox"
+                        name="skillCheck2"
+                        id="skillCheck2"
+                    />
+                    <div class="chkbox" onclick="toggleCheckbox(this)">CSS</div>
+                    <input
+                        type="checkbox"
+                        name="skillCheck3"
+                        id="skillCheck3"
+                    />
+                    <div class="chkbox" onclick="toggleCheckbox(this)">
+                        Javascript
+                    </div>
+                    <input
+                        type="checkbox"
+                        name="skillCheck4"
+                        id="skillCheck4"
+                    />
+                    <div class="chkbox" onclick="toggleCheckbox(this)">
+                        Android Studio
+                    </div>
+                    <input
+                        type="checkbox"
+                        name="skillCheck5"
+                        id="skillCheck5"
+                    />
+                    <div class="chkbox" onclick="toggleCheckbox(this)">iOS</div>
+                    <input
+                        type="checkbox"
+                        name="skillCheck5"
+                        id="skillCheck5"
+                    />
+                    <div class="chkbox" onclick="toggleCheckbox(this)">
+                        nexus
+                    </div>
+                </div>
+                <div class="button-section">
+                    <button type="submit">Apply Filters</button>
+                    <button type="reset">Clear All Filters</button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function toggleCheckbox(checkboxElement) {
+                const checkbox = checkboxElement.previousElementSibling;
+                checkbox.checked = !checkbox.checked;
+            }
+            
+        </script>
+    </body>
+</html>

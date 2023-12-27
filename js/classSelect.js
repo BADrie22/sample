@@ -8,19 +8,6 @@ function classSelect(str) {
 
 document.addEventListener('DOMContentLoaded', function () {
     const creditInput = document.getElementById('creditInput')
-    if (creditInput) {
-        creditInput.addEventListener('input', changeVal)
-    }
-
-    const chips = document.querySelectorAll('.chipsets > div')
-    if (chips) {
-        chips.forEach((chip) => {
-            chip.addEventListener('click', function () {
-                addVal(this)
-            })
-        })
-    }
-
     const editButton = document.getElementById('editProfileBtn')
     const multiButton = document.getElementById('btnSection')
     const discardBtn = document.getElementById('discard')
@@ -28,6 +15,19 @@ document.addEventListener('DOMContentLoaded', function () {
     const inputs = document.querySelectorAll('input')
     const textArea = document.getElementById('jobDesc')
     const creditsBtn = document.getElementById('creditsBtn')
+    const chips = document.querySelectorAll('.chipsets > div')
+
+    if (creditInput) {
+        creditInput.addEventListener('input', changeVal)
+    }
+
+    if (chips) {
+        chips.forEach((chip) => {
+            chip.addEventListener('click', function () {
+                addVal(this)
+            })
+        })
+    }
 
     // Fetch and load the navbar asynchronously
     fetch('./navbar.html')
@@ -93,6 +93,26 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 })
 
+function extendNav() {
+    const labels = document.querySelectorAll('label')
+    // const logoutBtn = document.getElementById('logout-button')
+
+    // if (logoutBtn) {
+    //     logoutBtn.style.visibility =
+    //         logoutBtn.style.visibility === 'hidden' ||
+    //         logoutBtn.style.visibility === ''
+    //             ? 'visible'
+    //             : 'hidden'
+    // }
+
+    labels.forEach((label) => {
+        label.style.display =
+            label.style.display === 'none' || label.style.display === ''
+                ? 'inline-block'
+                : 'none'
+    })
+}
+
 function changeVal(event) {
     const creditInput = document.getElementById('creditInput')
     const balance = document.getElementById('balance')
@@ -105,7 +125,7 @@ function changeVal(event) {
 
         if (isNaN(inputValue) || inputValue <= 0) {
             creditInput.value = balance.innerText = inputValue = 0
-            
+
             totalBalElements.forEach((totalBal) => {
                 totalBal.innerText = inputValue * creditScore
             })

@@ -20,11 +20,19 @@
             referrerpolicy="no-referrer"
         />
     </head>
-    <body onload="navLoad()">
+    <body>
         <div class="nav-container">
             <nav>
                 <div class="main-logo">
-                    <img src="/img/Headway.svg" alt="Headway Logo" />
+                    <!-- <img src="/img/Logo.svg" alt="Logo"> -->
+                    <img
+                        src="/img/Headway.svg"
+                        sizes="(max-width: 600px) 10%, (max-width: 1200px) 20%"
+                        alt="Headway Logo"
+                        srcset="/img/Headway.svg 1200w, /img/Logo.svg 600w"
+                    />
+
+                    <!-- <img src="/img/Headway.svg" alt="Headway" /> -->
                 </div>
 
                 <div class="nav-options">
@@ -198,37 +206,17 @@
                         </a>
                     </div>
                 </div>
-                <div class="logout-button">
-                    Logout
+                <div id="logout-button">
+                    <label for="logout-button">Logout</label>
                     <i
                         class="fa fa-right-from-bracket"
-                        style="color: #277eba"
                     ></i>
                 </div>
             </nav>
 
-            <button type="button" id="menu-xtend">
+            <!-- <button type="button" id="menu-xtend" onclick="extendNav()">
                 <i class="fa-solid fa-angles-right fa-xl"></i>
-            </button>
+            </button> -->
         </div>
-
-        <script>
-            function navLoad() {
-                const menuXtendButton = document.getElementById('menu-xtend')
-
-                menuXtendButton.addEventListener('click', () => {
-                    const labels =
-                        document.querySelectorAll('.nav-options label')
-
-                    labels.forEach((label) => {
-                        label.style.display =
-                            label.style.display === 'none' ||
-                            label.style.display === ''
-                                ? 'inline-block'
-                                : 'none'
-                    })
-                })
-            }
-        </script>
     </body>
 </html>

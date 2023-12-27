@@ -62,13 +62,14 @@ form {
 
         .chipsets {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
 
             #chips {
-                margin-inline: 0.1rem;
-                padding-inline: 0.5rem;
+                margin-inline: 0.25rem;
+                padding: 0.5rem;
                 background-color: #9acaea;
-                border-radius: 1rem;
+                border-radius: 0.25rem;
                 color: #000428;
                 font-weight: 900;
                 i {

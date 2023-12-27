@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+* {
+    user-select: none;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    background-color: #12121275;
+    font-family: "Poppins", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+input {
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    outline: none;
+    color: #f2f2f2;
+    border-radius: 1rem;
+    font-size: 16px;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 20vw;
+    padding: 1rem;
+    background-color: #03090dcc;
+    color: #f2f2f2;
+    #logo {
+        display: flex;
+        justify-content: flex-start;
+        i {
+            padding: 1rem;
+            color: #277eba;
+        }
+        img {
+            width: 75%;
+        }
+    }
+}
+
+.filter {
+    display: flex;
+    flex-direction: column;
+    .section,
+    .section-location {
+        padding: 1rem 0;
+        label {
+            font-weight: 600;
+            margin-inline: 1rem;
+        }
+    }
+    .chkbox-list {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        .chkbox {
+            margin: 0.1rem;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            border: 1px solid #f2f2f2;
+            font-weight: 600;
+        }
+        input[type='checkbox'] {
+            display: none;
+        }
+        input[type='checkbox']:checked + .chkbox {
+            background-color: #f2f2f2;
+            color: #121212;
+        }
+    }
+    .section-location {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+main {
+    padding: 1rem;
+}
