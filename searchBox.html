@@ -5,14 +5,27 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Advanced Search</title>
     </head>
-    <body>
+    <body bgcolor="black">
         <style>
+            section {
+                height: 100vh;
+                width: 100vw;
+                position: fixed;
+                z-index: 999;
+                background-color: #12121275;
+                backdrop-filter: blur(0.5rem);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
             div.search {
-                user-select: none;
                 display: flex;
                 flex-direction: row;
                 position: fixed;
-                background-color: #12121275;
+                /* top: 50%;
+                left: 50%;
+                transform: translate(-50%, 50%); */
+                background-color: #03090dcc;
                 padding: 0.5rem;
                 border: 0.25rem double #277eba;
                 border-radius: 1rem;
@@ -25,7 +38,7 @@
                     a {
                         text-decoration: none;
                         padding: 1rem;
-                        color: #121212;
+                        color: #f2f2f2;
                         &#active {
                             border-radius: 1rem;
                             background-color: #277eba;
@@ -39,7 +52,7 @@
                     display: flex;
                     flex-direction: column;
                     margin-left: 1rem;
-                    width: 70%;
+                    width: 35vw;
                     input[type='search'] {
                         background-color: transparent;
                         padding: 1rem;
@@ -85,85 +98,44 @@
                             background-color: transparent;
                             color: #277eba;
                             font-weight: 600;
+                            cursor: pointer;
                         }
                     }
                 }
             }
         </style>
 
-        <div class="search">
-            <div class="sidebar" id="sidebar">
-                <a href="#" id="active">Skills</a>
-                <a href="#">Degree</a>
-                <a href="#">Specialization</a>
-                <a href="#">Year of Passing</a>
-            </div>
-            <div class="selectskills">
-                <input
-                    type="search"
-                    name="search"
-                    id="search"
-                    placeholder="Search"
-                />
-                <div class="chkbox-list">
+        <section>
+            <div class="search">
+                <div class="sidebar" id="sidebar">
+                    <a href="#" id="active">Skills</a>
+                    <a href="#">Degree</a>
+                    <a href="#">Specialization</a>
+                    <a href="#">Year of Passing</a>
+                </div>
+                <div class="selectskills">
                     <input
-                        type="checkbox"
-                        name="skillCheck1"
-                        id="skillCheck1"
+                        type="search"
+                        name="search"
+                        id="search"
+                        placeholder="Search"
                     />
-                    <div class="chkbox" onclick="toggleCheckbox(this)">
-                        HTML
+                    <div class="chkbox-list">
+                        <input
+                            type="checkbox"
+                            name="skillCheck1"
+                            id="skillCheck1"
+                        />
+                        <div class="chkbox" onclick="toggleCheckbox(this)">
+                            HTML
+                        </div>
                     </div>
-                    <input
-                        type="checkbox"
-                        name="skillCheck2"
-                        id="skillCheck2"
-                    />
-                    <div class="chkbox" onclick="toggleCheckbox(this)">CSS</div>
-                    <input
-                        type="checkbox"
-                        name="skillCheck3"
-                        id="skillCheck3"
-                    />
-                    <div class="chkbox" onclick="toggleCheckbox(this)">
-                        Javascript
-                    </div>
-                    <input
-                        type="checkbox"
-                        name="skillCheck4"
-                        id="skillCheck4"
-                    />
-                    <div class="chkbox" onclick="toggleCheckbox(this)">
-                        Android Studio
-                    </div>
-                    <input
-                        type="checkbox"
-                        name="skillCheck5"
-                        id="skillCheck5"
-                    />
-                    <div class="chkbox" onclick="toggleCheckbox(this)">iOS</div>
-                    <input
-                        type="checkbox"
-                        name="skillCheck5"
-                        id="skillCheck5"
-                    />
-                    <div class="chkbox" onclick="toggleCheckbox(this)">
-                        nexus
+                    <div class="button-section">
+                        <button type="submit">Apply Filters</button>
+                        <button type="reset">Clear All Filters</button>
                     </div>
                 </div>
-                <div class="button-section">
-                    <button type="submit">Apply Filters</button>
-                    <button type="reset">Clear All Filters</button>
-                </div>
             </div>
-        </div>
-
-        <script>
-            function toggleCheckbox(checkboxElement) {
-                const checkbox = checkboxElement.previousElementSibling;
-                checkbox.checked = !checkbox.checked;
-            }
-            
-        </script>
+        </section>
     </body>
 </html>

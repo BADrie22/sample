@@ -14,10 +14,11 @@
         <link rel="stylesheet" href="css/hire.css" />
     </head>
     <body>
+        <div id="searchBox"></div>
         <nav>
             <div id="logo">
                 <i class="fa-solid fa-arrow-left"></i>
-                <img src="./img/Headway.svg" alt="" srcset="" />
+                <img src="./img/Headway.svg" alt="" />
             </div>
 
             <div class="filter">
@@ -38,73 +39,102 @@
                             <div class="chkbox" onclick="toggleCheckbox(this)">
                                 HTML
                             </div>
-                            <input
-                                type="checkbox"
-                                name="skillCheck2"
-                                id="skillCheck2"
-                            />
-                            <div class="chkbox" onclick="toggleCheckbox(this)">
-                                CSS
-                            </div>
-                            <input
-                                type="checkbox"
-                                name="skillCheck3"
-                                id="skillCheck3"
-                            />
-                            <div class="chkbox" onclick="toggleCheckbox(this)">
-                                Javascript
-                            </div>
-                            <input
-                                type="checkbox"
-                                name="skillCheck4"
-                                id="skillCheck4"
-                            />
-                            <div class="chkbox" onclick="toggleCheckbox(this)">
-                                Android Studio
-                            </div>
-                            <input
-                                type="checkbox"
-                                name="skillCheck5"
-                                id="skillCheck5"
-                            />
-                            <div class="chkbox" onclick="toggleCheckbox(this)">
-                                iOS
-                            </div>
-                            <a href="searchBox.html" id="advancedOptions"
-                                >Advanced options</a
-                            >
                         </div>
+                        <a href="#" id="advancedOptions">Advanced options</a>
                     </div>
                 </div>
             </div>
         </nav>
 
         <main>
-            <div id="section">
-                <i class="fa-solid fa-arrow-down-wide-short"></i>
+            <div class="section">
+                <div class="sortGrp">
+                    <input type="radio" name="sortBtn" id="sortBtn" /><i
+                        class="fa-solid fa-arrow-down-wide-short"
+                    ></i>
+                    <input type="radio" name="sortBtn" id="sortBtn" />
+                    <input type="radio" name="sortBtn" id="sortBtn" />
+                </div>
                 <input type="search" name="searchBox" id="searchBox" />
+            </div>
+            <div id="scrollable">
+                <div class="card-section">
+                    <div class="card">
+                        <div class="header">
+                            <div class="content">
+                                <h3>Venugopal Iyyer</h3>
+                                <p>
+                                    <span name="location"
+                                        >VishakaPatnam, Hyderabad</span
+                                    >
+                                    <span name="passYear">2024</span>
+                                </p>
+                            </div>
+                            <img src="img/iyyer.jpg" alt="Img" />
+                        </div>
+                        <div class="contents">
+                            <span name="skills">Html</span>
+                            <span name="skills">CSS3</span>
+                            <span name="skills">Javascript</span>
+                            <span name="skills">Android Studio</span>
+                            <span name="skills">iOS</span>
+                            <span name="skills">Java</span>
+                            <span name="skills">Graphic Design</span>
+                        </div>
+                        <div class="btn-section">
+                            <button type="submit">View Profile</button>
+                            <p id="timestamp">9999 Days ago</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </main>
 
         <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                document
+                    .getElementById('advancedOptions')
+                    .addEventListener('click', () => loadAdvancedOptions())
+            })
             function toggleCheckbox(checkboxElement) {
                 const checkbox = checkboxElement.previousElementSibling
                 checkbox.checked = !checkbox.checked
             }
 
-            document
-                .getElementById('advancedOptions')
-                .addEventListener('click', function (event) {
-                    event.preventDefault()
-                    loadAdvancedOptions()
-                })
-
             function loadAdvancedOptions() {
-                // Fetch the content of searchBox.html and update the page
+                // Fetch the content of searchBox.html and append it to the existing page
                 fetch('searchBox.html')
                     .then((response) => response.text())
                     .then((html) => {
-                        document.getElementById('section').innerHTML = html
+                        const searchBox = document.getElementById('searchBox')
+                        if (searchBox) {
+                            searchBox.innerHTML = html
+
+                            // Add event listeners for elements inside the fetched content
+                            const sidebar = searchBox.querySelector('#sidebar')
+                            if (sidebar instanceof Element) {
+                                sidebar.addEventListener(
+                                    'click',
+                                    function (event) {
+                                        const clickedElement = event.target
+
+                                        if (clickedElement.tagName === 'A') {
+                                            // Remove 'active' from the previously active element
+                                            const activeElement =
+                                                sidebar.querySelector('#active')
+                                            if (activeElement) {
+                                                activeElement.removeAttribute(
+                                                    'id'
+                                                )
+                                            }
+
+                                            // Set 'active' to the clicked element
+                                            clickedElement.id = 'active'
+                                        }
+                                    }
+                                )
+                            }
+                        }
                     })
                     .catch((error) =>
                         console.error('Error loading advanced options:', error)
