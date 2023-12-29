@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 * {
     user-select: none;
+    transition: all 0.5s ease-in-out;
     ::-webkit-scrollbar {
         display: none;
     }
@@ -10,8 +11,8 @@ body {
     margin: 0;
     display: flex;
     flex-direction: row;
-    /* background-color: #12121275; */
-    background: linear-gradient(#000428, #004e92);
+    background-color: #ddedf8;
+    /* background: linear-gradient(#000428, #004e92); */
     font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     overflow: hidden;
 }
@@ -20,14 +21,14 @@ input {
     padding: 0.5rem 1rem;
     background-color: transparent;
     outline: none;
-    color: #f2f2f2;
+    color: #06121a;
     border-radius: 1rem;
     font-size: 16px;
 }
 
 i {
     padding: 1rem;
-    color: #277eba;
+    color: #004e92;
 }
 
 nav {
@@ -36,7 +37,7 @@ nav {
     height: 100vh;
     width: 20vw;
     padding: 1rem;
-    background-color: #03090dcc;
+    background-color: #06121a;
     color: #f2f2f2;
     #logo {
         display: flex;
@@ -69,16 +70,15 @@ nav {
             padding: 0.5rem;
             border-radius: 0.5rem;
             cursor: pointer;
-            transition: background-color 0.3s ease;
-            border: 1px solid #f2f2f2;
+            border: 1px solid #ddedf8;
             font-weight: 600;
         }
         input[type='checkbox'] {
             display: none;
         }
         input[type='checkbox']:checked + .chkbox {
-            background-color: #f2f2f2;
-            color: #121212;
+            background-color: #ddedf8;
+            color: #06121a;
         }
     }
     .section-location {
@@ -89,19 +89,22 @@ nav {
 
 main {
     padding: 1rem;
-    width: 80vw;
+    width: 75vw;
     height: 100vh;
     .section {
         display: flex;
-        
+        justify-content: flex-end;
         .sortGrp {
             input[type='radio'] {
                 display: none;
             }
         }
+        input[type='search'] {
+            width: calc(35% + 5rem);
+        }
     }
     #scrollable {
-        height: 80vh;
+        height: 90vh;
         overflow-y: scroll;
     }
     .card-section {
@@ -112,36 +115,61 @@ main {
         .card {
             display: flex;
             flex-direction: column;
-            padding: 1rem;
-            border: 0.1rem solid #03090dcc;
+            padding: 0.5rem 1rem;
+            box-shadow: 0 0 1rem #06121a;
             border-radius: 0.5rem;
-            color: #f2f2f2;
+            color: #06121a;
             flex-wrap: wrap;
             &:hover {
-                background-color: #03090dcc;
-                box-shadow: 0 0 1rem #03090dcc;
+                background-color: #004e92;
+                color: #ddedf8;
+                .contents {
+                    span {
+                        background-color: #ddedf8;
+                        color: #004e92;
+                    }
+                }
             }
             .header {
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
+                align-items: center;
+                padding: 0.5rem 0;
                 .content {
                     display: flex;
                     flex-direction: column;
+                    h3,
+                    p {
+                        margin: 0;
+                    }
                     p {
                         font-size: 12px;
                         span {
-                            white-space: nowrap;
+                            /* white-space: nowrap; */
+                            &.degree {
+                                background-color: #06121a;
+                                color: #ddedf8;
+                                padding-inline: 1rem;
+                                border-radius: 2rem;
+                                .passYear {
+                                    background-color: #ddedf8;
+                                    font-weight: 600;
+                                    color: #06121a;
+                                    padding-inline: 0.5rem;
+                                }
+                            }
                         }
                     }
                 }
                 img {
-                    height: 100px;
-                    width: 100px;
+                    margin-inline: 1rem 0;
+                    height: 5rem;
+                    width: 5rem;
                     object-fit: contain;
-                    border: 0.1rem solid #000428;
+                    border: 0.1rem solid #004e92;
+                    background-color: #ddedf8;
                     border-radius: 50%;
-                    /* background-color: #03090dcc; */
                 }
             }
             .contents {
@@ -154,24 +182,33 @@ main {
                     font-size: 14px;
                     border-radius: 1rem;
                     padding: 0.125rem 0.875rem;
-                    background-color: #277eba;
+                    background-color: #004e92;
+                    color: #ddedf8;
                 }
             }
 
             .btn-section {
                 display: flex;
                 margin-top: auto;
-                padding-top: 0.25rem;
+                padding-top: 1rem;
                 flex-direction: column;
                 align-items: flex-end;
                 button {
                     padding: 0.5rem 1rem;
                     font-weight: 600;
-                    background-color: #27b992;
-                    border: none;
+                    background-color: #06121a;
+                    border: 0.1rem solid transparent;
                     border-radius: 1rem;
+                    cursor: pointer;
+                    color: #ddedf8;
+                    &:hover {
+                        background-color: transparent;
+                        color: #ddedf8;
+                        border-color: #ddedf8;
+                    }
                 }
                 p {
+                    margin: 0;
                     font-size: 12px;
                     padding-inline: 0.5rem;
                 }
