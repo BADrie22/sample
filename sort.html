@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        #sort-section {
+            position: absolute;
+            top: 20%;
+            display: flex;
+            width: fit-content;
+            height: 10px;
+            justify-content: center;
+            align-items: center;
+            border: 0.1rem solid #121212;
+            border-radius: 2rem;
+        }
+        .toggleSort {
+            position: relative;
+        }
+        .toggleSort i {
+            padding: .25rem;
+            border-radius: 02rem;
+            cursor: pointer;
+            border: 0.5rem solid transparent;
+        }
+        .toggleSort .active {
+            background-color: #121212;
+            color: #f2f2f2;
+            border: 0.5rem solid #121212;
+        }
+
+        @keyframes moveEffect {
+            0% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(50%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div id="sort-section">
+    <div class="toggleSort">
+        <i class="fa-solid fa-arrow-down-wide-short" tabindex="1" onclick="toggleActive(1)"></i>
+        <i class="fa-solid fa-arrow-up-wide-short" tabindex="2" onclick="toggleActive(2)"></i>
+    </div>
+</div>
+
+<script>
+    function toggleActive(activeElement) {
+        const elements = document.querySelectorAll('.toggleSort i');
+        const sortSection = document.getElementById('sort-section');
+
+        elements.forEach((element, index) => {
+            if (index + 1 === activeElement) {
+                element.classList.add('active');
+            } else {
+                element.classList.remove('active');
+            }
+        });
+    }
+</script>
+
+</body>
+</html>

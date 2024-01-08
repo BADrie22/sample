@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 * {
     user-select: none;
-    transition: all 0.5s ease-in-out;
+    &:not(nav) {
+        transition: all 0.5s ease-in-out;
+    }
     ::-webkit-scrollbar {
         display: none;
     }
@@ -95,12 +97,37 @@ main {
         display: flex;
         justify-content: flex-end;
         .sortGrp {
+            box-sizing: border-box;
+            margin-inline: 1rem;
+            height: 1rem;
+            border: 1px solid #06121a;
+            display: flex;
+            align-self: center;
+            align-items: center;
+            border-radius: 0.25rem;
+            input[type='radio'],
+            label {
+                margin: 0;
+                border-radius: 5rem;
+                i {
+                    /* border: 1px solid #06121a; */
+                    color: #06121a;
+                    padding: 0.5rem;
+                }
+            }
             input[type='radio'] {
                 display: none;
+                &:checked + label {
+                    background-color: #06121a;
+                    i {
+                        color: #ddedf8;
+                    }
+                }
             }
         }
         input[type='search'] {
             width: calc(35% + 5rem);
+            border: 0.1rem solid #004e92;
         }
     }
     #scrollable {
@@ -150,7 +177,7 @@ main {
                             &.degree {
                                 background-color: #06121a;
                                 color: #ddedf8;
-                                padding-inline: 1rem;
+                                padding-inline: 0.5rem;
                                 border-radius: 2rem;
                                 .passYear {
                                     background-color: #ddedf8;
@@ -166,7 +193,7 @@ main {
                     margin-inline: 1rem 0;
                     height: 5rem;
                     width: 5rem;
-                    object-fit: contain;
+                    object-fit: cover;
                     border: 0.1rem solid #004e92;
                     background-color: #ddedf8;
                     border-radius: 50%;

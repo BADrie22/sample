@@ -30,9 +30,6 @@
         display: grid;
         grid-template-columns: 0.5fr 2fr 1fr 3fr 0.5fr;
         text-align: justify;
-        div {
-            /* border: 1px solid red; */
-        }
         white-space: nowrap;
         #salary {
             display: flex;

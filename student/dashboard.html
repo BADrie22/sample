@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dashboard</title>
+        <link rel="stylesheet" href="../css/profile.css" />
+        <link rel="stylesheet" href="../css/dashboard.css" />
+        <link rel="stylesheet" href="../css/grid.css">
+    </head>
+    <body>
+        <div id="navbarContainer"></div>
+        <main>
+            <div id="spacing"></div>
+
+            <div class="profileSection">
+                <header>
+                    <span id="spannable">Dashboard</span>
+                    <div id="dashboard-sub">
+                        <a href="#" id="premium">
+                            <span>Get hired faster</span>
+                            <span>Try premium</span>
+                        </a>
+                        <img src="../img/premium.svg" alt="premium" />
+                    </div>
+                </header>
+
+                <div class="preview-section">
+                    <div id="sub-section">
+                        <p>Jobs Applied</p>
+                        <span>9999</span>
+                    </div>
+
+                    <div id="sub-section">
+                        <p>Shortlisted</p>
+                        <span>9999</span>
+                    </div>
+                </div>
+
+                <div class="grid-box" style="height: 45vh">
+                    <div class="title">
+                        <div>Sl No.</div>
+                        <div>Job Title</div>
+                        <div>Salary Offered</div>
+                        <div>Company Name</div>
+                        <div id="status">Status</div>
+                    </div>
+
+                    <div id="scrollable-contain">
+                        <div class="contents">
+                            <div name="index">01</div>
+                            <div name="jobTitle">
+                                Fullstack Graphic Designer
+                            </div>
+                            <div name="salary" id="salary">
+                                <div>999999</div>
+                                <div>-</div>
+                                <div>999999</div>
+                            </div>
+                            <div name="compName">
+                                Universal Studios
+                            </div>
+                            <div name="status">Closed</div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="end"
+                        onclick="window.location.href = 'jobs.html'"
+                    >
+                        View All
+                        <i class="fa-solid fa-angles-down"></i>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <script src="js/navbar.js"></script>
+    </body>
+</html>

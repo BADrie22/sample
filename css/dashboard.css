@@ -5,7 +5,6 @@
     gap: 10%;
     justify-content: space-around;
     width: 100%;
-
     #sub-section {
         width: 30%;
         background-color: #ddedf8;
@@ -15,13 +14,11 @@
         border-radius: 1rem;
         font-weight: 900;
         align-content: center;
-
         p {
-            margin: 0%;
+            margin: 0;
             color: #000428;
             font-size: 20px;
         }
-
         span {
             color: #277eba;
             font-size: 56px;

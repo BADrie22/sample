@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 * {
     color: #ddedf8;
     ::-webkit-scrollbar {
@@ -11,8 +12,8 @@ div.nav-container {
     flex-direction: row;
     position: absolute;
     z-index: 1;
-    height: 100%;
-    width: 20%;
+    height: 100vh;
+    width: 20vw;
     background: #03090dcc;
     box-shadow: 0.25rem 0 1rem #121212;
     nav {
@@ -24,36 +25,39 @@ div.nav-container {
         .main-logo {
             padding: 1rem;
             img {
-                max-width: 100%;
+                width: 15vw;
             }
         }
         .nav-options {
             display: flex;
             flex-direction: column;
             margin: auto;
-            svg {
-                width: 15%;
-                vertical-align: middle;
-                padding: 0 0.5rem;
-            }
-        }
-
-        #menu-item {
-            display: flex;
-            flex-direction: row;
-
-            a {
-                border-radius: 0.25rem;
-                padding: 1rem 0.5rem;
-                text-align: start;
-                text-decoration: none;
-                white-space: nowrap;
-                width: 100%;
-                &:hover {
-                    background-color: #9acaea;
-                }
-                &.active {
-                    background-color: #277eba;
+            width: 100%;
+            #menu-item {
+                display: flex;
+                flex-direction: row;
+                a {
+                    border-radius: 0.25rem;
+                    padding: 1rem 0.5rem;
+                    text-align: start;
+                    text-decoration: none;
+                    white-space: nowrap;
+                    width: 100%;
+                    img {
+                        width: 2vw;
+                        vertical-align: middle;
+                        padding: 0 0.5rem;
+                    }
+                    &:hover {
+                        background-color: #9acaea;
+                        label,
+                        img {
+                            filter: brightness(0);
+                        }
+                    }
+                    &.active {
+                        background-color: #277eba;
+                    }
                 }
             }
         }
@@ -64,10 +68,9 @@ div.nav-container {
             border-radius: 0.25rem;
             color: #277eba;
             cursor: pointer;
-            width: auto;
-            padding: 0.5rem 1rem;
+            padding: 0.5rem 0;
             border-radius: 0.25rem;
-            margin: auto;
+            margin: auto 0;
             font-weight: 600;
             box-shadow: 0 0 2rem #03090dcc;
             outline: none;
@@ -88,9 +91,9 @@ div.nav-container {
     }
 }
 
-div.nav-container .hide label {
+/* div.nav-container .hide label {
     display: none;
-}
+} */
 
 /* Extra small devices (phones) */
 @media only screen and (max-width: 575.98px) {

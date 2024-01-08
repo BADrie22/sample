@@ -1,63 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jobs</title>
-    <link rel="stylesheet" href="css/profile.css" />
-    <link rel="stylesheet" href="css/grid.css">
-  </head>
-  <body onload="classSelect('jobs')">
-    <div id="navbarContainer"></div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Jobs</title>
+        <link rel="stylesheet" href="css/profile.css" />
+        <link rel="stylesheet" href="css/grid.css" />
+    </head>
+    <body onload="classSelect('jobs')">
+        <div id="navbarContainer"></div>
 
-    <main>
-      <div id="spacing"></div>
+        <main>
+            <div id="spacing"></div>
 
-      <div class="profileSection">
-        <header>
-          <span id="spannable">Jobs</span>
-          <button type="button" id="editBtn" onclick="window.location.href = 'post-a-job.html'">Post a Job</button>
-        </header>
+            <div class="profileSection">
+                <header>
+                    <span id="spannable">Jobs</span>
+                    <button
+                        type="button"
+                        id="editBtn"
+                        onclick="window.location.href = 'post-a-job.html'"
+                    >
+                        Post a Job
+                    </button>
+                </header>
 
-        <div class="grid-box">
+                <div class="grid-box">
+                    <div class="title">
+                        <div>Sl No.</div>
+                        <div>Job Title</div>
+                        <div>Salary Offered</div>
+                        <div>Applications received</div>
+                        <div id="status">Status</div>
+                    </div>
 
-          <div class="title">
-            <div>Sl No.</div>
-            <div>Job Title</div>
-            <div>Salary Offered</div>
-            <div>Applications received</div>
-            <div id="status">Status</div>
-          </div>
-          
-          <div id="scrollable-contain">
-            <div class="contents">
-              <div name="index">01</div>
-              <div name="jobTitle">Fullstack Graphic Designer</div>
-              <div name="salary" id="salary">
-                <div>999999</div>
-                <div>-</div>
-                <div>999999</div>
+                    <div id="scrollable-contain">
+                        <div class="contents">
+                            <div name="index">01</div>
+                            <div name="jobTitle">
+                                Fullstack Graphic Designer
+                            </div>
+                            <div name="salary" id="salary">
+                                <div>999999</div>
+                                <div>-</div>
+                                <div>999999</div>
+                            </div>
+                            <div name="receivedApplications" id="app-receive">
+                                1<button type="submit">View</button>
+                            </div>
+                            <div name="status">Closed</div>
+                        </div>
+
+                        <div class="contents">
+                            <div name="index">02</div>
+                            <div name="jobTitle">
+                                Business Development Representative
+                            </div>
+                            <div name="salary" id="salary">
+                                <div>999999</div>
+                                <div>-</div>
+                                <div>999999</div>
+                            </div>
+                            <div name="receivedApplications" id="app-receive">
+                                100000<button type="submit">View</button>
+                            </div>
+                            <div name="status">Active</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-              <div name="receivedApplications" id="app-receive">1<button type="submit">View</button></div>
-              <div name="status">Closed</div>
-            </div>
+        </main>
 
-            <div class="contents">
-              <div name="index">02</div>
-              <div name="jobTitle">Business Development Representative</div>
-              <div name="salary" id="salary">
-                <div>999999</div>
-                <div>-</div>
-                <div>999999</div>
-            </div>
-              <div name="receivedApplications" id="app-receive">100000<button type="submit">View</button></div>
-              <div name="status">Active</div>
-            </div>
-          </div>
-      </div>
-
-    </main>
-
+        <script src="js/lazyLoad.js"></script>
         <script src="js/classSelect.js"></script>
-  </body>
+    </body>
 </html>
