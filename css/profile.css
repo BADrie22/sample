@@ -2,6 +2,9 @@
     font-family: Poppins;
     color: #ddedf8;
     cursor: url('../img/customCursor.png'), auto;
+    input[type='search'] {
+        cursor: text;
+    }
 }
 
 body {
@@ -30,7 +33,6 @@ main {
     padding: 1.5rem;
     width: 20%;
 }
-
 
 input[type='text']:enabled {
     cursor: text;
@@ -87,19 +89,37 @@ button:hover {
             color: #9acaea;
         }
         #searchbar {
-            padding: 0 1rem;
-            text-align: calc();
+            padding: 0.5rem 1.25rem;
             outline: none;
             color: #9acaea;
             border-radius: 2rem;
-            border: 0.1rem solid #004e92;   
+            border: 0.1rem solid #004e92;
             font-size: 16px;
-            input, button {
+            input,
+            button {
                 border: none;
                 background-color: transparent;
-                &:focus, &:hover {
+                &:focus,
+                &:hover {
                     outline: none;
                     box-shadow: none;
+                }
+            }
+            input {
+                border-bottom: 1px solid #277eba;
+                &::-webkit-search-cancel-button {
+                    filter: invert();
+                }
+            }
+            input:focus + button i {
+                border-color: #ddedf8;
+                color: #ddedf8;
+            }
+            button {
+                margin: 0;
+                padding: 0;
+                i {
+                    color: #277eba;
                 }
             }
         }
@@ -191,7 +211,7 @@ button:hover {
             label {
                 opacity: 0;
                 position: absolute;
-                height: 125px;  
+                height: 125px;
                 width: 125px;
                 text-align: center;
                 margin: auto;
@@ -291,6 +311,26 @@ button:hover {
             button:last-child:hover,
             button:last-child:focus {
                 box-shadow: 0 0 1rem #0efe72;
+            }
+        }
+
+        .desc-section {
+            display: flex;
+            flex-direction: column;
+            padding-inline: 1rem;
+            /* width: 100%; */
+            label {
+                font-size: 16px;
+                font-weight: 500;
+                padding: 0.5rem;
+            }
+            textarea {
+                background-color: transparent;
+                border: 2px solid #277eba;
+                border-radius: 0.5rem;
+                font-size: 18px;
+                padding-inline: 1rem;
+                resize: none;
             }
         }
 

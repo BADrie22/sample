@@ -13,7 +13,7 @@
             border-bottom: 1px solid #515151;
             padding-top: 1rem;
             &:hover {
-                border-bottom: 1px solid #b93127;
+                border-color: #b93127;
             }
             button {
                 justify-content: space-around;
@@ -28,13 +28,13 @@
     .title,
     .contents {
         display: grid;
-        grid-template-columns: 0.5fr 3.5fr 1fr 2fr 1fr;
-        text-align: justify;
-        gap: 1rem;
-        white-space: nowrap;
+        grid-template-columns: 1.5fr repeat(4, 3fr);
+        align-items: center;
+        text-align: center;
         #salary {
-            display: flex;
-            justify-content: space-around;
+            display: grid;
+            grid-template-columns: 2.5fr 0.5fr 3fr;
+            align-content: center;
         }
         #education {
             text-align: center;
@@ -42,6 +42,7 @@
         div#app-receive {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
+            justify-content: space-between;
             button {
                 border: none;
                 background: none;
@@ -75,7 +76,5 @@
 
 /* Extra large devices (extra large desktops) */
 @media only screen and (min-width: 1200px) {
-    .contents {
-        gap: 2.5%;
-    }
+
 }

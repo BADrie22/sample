@@ -23,7 +23,7 @@ div.nav-container {
         text-align: center;
         padding: 1rem;
         .main-logo {
-            padding: 1rem;
+            padding: 0.5rem;
             img {
                 width: 15vw;
             }
@@ -33,9 +33,10 @@ div.nav-container {
             flex-direction: column;
             margin: auto;
             width: 100%;
-            #menu-item {
+            .menu-item {
                 display: flex;
                 flex-direction: row;
+                cursor: pointer;
                 a {
                     border-radius: 0.25rem;
                     padding: 1rem 0.5rem;
@@ -43,6 +44,7 @@ div.nav-container {
                     text-decoration: none;
                     white-space: nowrap;
                     width: 100%;
+                    outline: none;
                     img {
                         width: 2vw;
                         vertical-align: middle;
@@ -74,6 +76,8 @@ div.nav-container {
             font-weight: 600;
             box-shadow: 0 0 2rem #03090dcc;
             outline: none;
+            width: 75%;
+            margin: auto;
             i {
                 color: #277eba;
             }

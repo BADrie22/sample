@@ -21,17 +21,13 @@
             <nav>
                 <div class="main-logo">
                     <img
-                        src="/img/Headway.svg"
-                        sizes="(max-width: 600px) 10%, (max-width: 1200px) 20%"
+                        src="../img/Headway.svg"
                         alt="Headway Logo"
-                        srcset="/img/Headway.svg 1200w, /img/Logo.svg 600w"
                     />
-
-                    <!-- <img src="/img/Headway.svg" alt="Headway" /> -->
                 </div>
 
                 <div class="nav-options">
-                    <div id="menu-item" id="dashboard">
+                    <div id="menu-item" id="dashboard" class="active">
                         <a href="dashboard.html">
                             <img src="../img/dashboard.svg" alt="dashboard">
                             <label for="Dashboard">Dashboard</label></a
@@ -55,6 +51,12 @@
                     <i class="fa fa-right-from-bracket"></i>
                 </div>
             </nav>
+
+            <main>
+                <div id="dashboardContainer"></div>
+                <div id="profileContainer"></div>
+                <div id="jobsContainer"></div>
+            </main>
         </div>
     </body>
 </html>

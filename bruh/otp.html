@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Reset Password</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const form = document.querySelector('form')
+                const timerSpan = document.getElementById('timer')
+                const spanner = document.getElementById('validate')
+                let timerSeconds = 180 // Initial timer duration in seconds
+
+                // Function to update the timer display
+                function updateTimer() {
+                    const minutes = Math.floor(timerSeconds / 60)
+                    const seconds = timerSeconds % 60
+                    timerSpan.textContent = `${String(minutes).padStart(
+                        2,
+                        '0'
+                    )}:${String(seconds).padStart(2, '0')}`
+                }
+
+                // Function to decrement the timer and update display
+                function decrementTimer() {
+                    if (timerSeconds > 0) {
+                        timerSeconds--
+                        updateTimer()
+                    } else {
+                        // Handle timer expiration, e.g., display a message or take appropriate action
+                        spanner.style.visibility = 'visible'
+                    }
+                }
+
+                // Initial setup
+                updateTimer()
+
+                // Set up an interval to decrement the timer every second
+                const timerInterval = setInterval(decrementTimer, 1000)
+
+                // Event listener for form submission
+                form.addEventListener('submit', (event) => {
+                    event.preventDefault() // Prevent the default form submission
+
+                    if (validateOTP()) {
+                        event.target.submit() // Submit the form
+                    }
+                })
+
+                // ... remaining code ...
+            })
+
+            function validateOTP() {
+                const otpInput = document.getElementById('getOTP')
+                const isValid = /^\d{6}$/.test(otpInput.value)
+
+                const spanner = document.getElementById('validate')
+                if (!isValid) {
+                    spanner.style.visibility = 'visible'
+                    return false
+                } else {
+                    spanner.style.visibility = 'hidden'
+                    return true
+                }
+            }
+        </script>
+        <main>
+            <form action="" method="post" autocomplete="off">
+                <img src="../img/Headway.svg" alt="Headway logo" />
+                <div class="inputDiv">
+                    <label for="getOTP">OTP</label>
+                    <div class="inputSpanner">
+                        <input
+                            type="text"
+                            placeholder="-"
+                            maxlength="1"
+                            name="getOTP1"
+                        />
+                        <input
+                            type="text"
+                            placeholder="-"
+                            maxlength="1"
+                            name="getOTP2"
+                        />
+                        <input
+                            type="text"
+                            placeholder="-"
+                            maxlength="1"
+                            name="getOTP3"
+                        />
+                        <input
+                            type="text"
+                            placeholder="-"
+                            maxlength="1"
+                            name="getOTP4"
+                        />
+                        <input
+                            type="text"
+                            placeholder="-"
+                            maxlength="1"
+                            name="getOTP5"
+                        />
+                        <input
+                            type="text"
+                            placeholder="-"
+                            maxlength="1"
+                            name="getOTP6"
+                            oninput="handleInput(this, null)"
+                        />
+                    </div>
+                    <!-- <input
+                        type="text"
+                        name="getOTP"
+                        id="getOTP"
+                        placeholder="------"
+                        maxlength="6"
+                        oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+                    /> -->
+                </div>
+
+                <div class="subSection">
+                    <span id="timer">03:00</span>
+                    <a href="#">Resend OTP</a>
+                </div>
+
+                <div class="btnSection">
+                    <button
+                        type="reset"
+                        onclick="window.location.href = 'forgot-password.html'"
+                    >
+                        Cancel
+                    </button>
+                    <button type="submit">Verify</button>
+                </div>
+            </form>
+        </main>
+        <span id="validate" aria-live="assertive"
+            >Email not registered <button type="button">X</button></span
+        >
+    </body>
+</html>

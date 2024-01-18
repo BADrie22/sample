@@ -4,8 +4,8 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Profile</title>
-        <link rel="stylesheet" href="css/navbar.css" />
-        <link rel="stylesheet" href="css/profile.css" />
+        <link rel="stylesheet" href="../css/navbar.css" />
+        <link rel="stylesheet" href="../css/profile.css" />
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -13,44 +13,38 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
         />
+        <script src="../js/classSelect.js"></script>
+        <script src="../js/imgPreview.js"></script>
     </head>
     <body>
         <div class="nav-container">
             <nav>
                 <div class="main-logo">
-                    <img src="/img/Headway.svg" alt="Logo" />
+                    <img src="../img/Headway.svg" alt="Headway Logo" />
                 </div>
 
                 <div class="nav-options">
-                    <div id="menu-item">
-                        <a href="dashboard.html" id="dashboard">
-                            <img src="img/dashboard.svg" alt="Dashboard" />
+                    <div class="menu-item">
+                        <a href="./dashboard.html" id="dashboard">
+                            <img src="../img/dashboard.svg" alt="dashboard" />
                             <label for="Dashboard">Dashboard</label></a
                         >
                     </div>
-                    <div id="menu-item">
-                        <a href="./company-profile.html" id="profile" class="active">
-                            <img src="img/profile.svg" alt="Profile" />
+                    <div class="menu-item">
+                        <a
+                            href="./student-profile.html"
+                            id="profile"
+                            class="active"
+                        >
+                            <img src="../img/profile.svg" alt="profile" />
                             <label for="Profile">Profile</label></a
                         >
                     </div>
-                    <div id="menu-item">
-                        <a href="hire.html" id="hire">
-                            <img src="img/hire.svg" alt="Hire" />
-                            <label for="Hire">Hire</label></a
+                    <div class="menu-item">
+                        <a href="./jobs.html" id="jobApply">
+                            <img src="../img/jobs.svg" alt="jobs" />
+                            <label for="jobApply">Jobs Applied</label></a
                         >
-                    </div>
-                    <div id="menu-item">
-                        <a href="./bulk-hire.html" id="bulk-hire">
-                            <img src="img/bulk-hire.svg" alt="Bulk-hire" />
-                            <label for="Bulk Hire">Bulk Hire</label>
-                        </a>
-                    </div>
-                    <div id="menu-item">
-                        <a href="./comp-jobs.html" id="jobs">
-                            <img src="img/jobs.svg" alt="jobs" />
-                            <label for="Jobs">Jobs</label>
-                        </a>
                     </div>
                 </div>
                 <div id="logout-button">
@@ -59,11 +53,12 @@
                 </div>
             </nav>
 
-            <!-- <button type="button" id="menu-xtend" onclick="extendNav()">
-                <i class="fa-solid fa-angles-right fa-xl"></i>
-            </button> -->
+            <main>
+                <div id="dashboardContainer"></div>
+                <div id="profileContainer"></div>
+                <div id="jobsContainer"></div>
+            </main>
         </div>
-
         <main>
             <div id="spacing"></div>
 
@@ -89,21 +84,23 @@
                             tabindex="1"
                             disabled
                         />
-                        <img src="./img/Headway.svg" id="imagePreview" alt="" />
+                        <img
+                            src="../img/Headway.svg"
+                            id="imagePreview"
+                            alt=""
+                        />
                         <label for="uploadLogo" id="upload">Upload File</label>
                     </div>
 
                     <div class="section">
                         <div class="primary-section">
                             <div class="form-col">
-                                <label for="compName">Company Name</label>
+                                <label for="name">Name</label>
                                 <input
                                     type="text"
-                                    name="compName"
-                                    id="compName"
+                                    name="name"
                                     tabindex="2"
                                     disabled
-                                    value="bruh"
                                 />
                             </div>
                             <div class="form-col">
@@ -117,12 +114,22 @@
                                 />
                             </div>
                             <div class="form-col">
-                                <label for="compURL">Website URL</label>
+                                <label for="degree">Highest Degree</label>
                                 <input
-                                    type="url"
-                                    name="compURL"
-                                    id="compURL"
+                                    type="text"
+                                    name="degree"
                                     tabindex="4"
+                                    disabled
+                                />
+                            </div>
+                            <div class="form-col">
+                                <label for="completionYear"
+                                    >Completion Year</label
+                                >
+                                <input
+                                    type="text"
+                                    name="completion"
+                                    tabindex="5"
                                     disabled
                                 />
                             </div>
@@ -130,38 +137,54 @@
 
                         <div class="primary-section">
                             <div class="form-col">
-                                <label for="contactPerson"
-                                    >Contact Person Name</label
-                                >
+                                <label for="collegeName">College Name</label>
                                 <input
                                     type="text"
-                                    name="contactPerson"
-                                    id="contactPerson"
+                                    name="clgName"
                                     tabindex="6"
                                     disabled
                                 />
                             </div>
                             <div class="form-col">
-                                <label for="designation">Designation</label>
+                                <label for="phone">Phone</label>
                                 <input
-                                    type="text"
-                                    name="designation"
-                                    id="designation"
+                                    type="tel"
+                                    name="contact"
                                     tabindex="7"
                                     disabled
                                 />
                             </div>
                             <div class="form-col">
-                                <label for="compSector">Sector</label>
+                                <label for="specialization"
+                                    >Specialization</label
+                                >
                                 <input
                                     type="text"
-                                    name="compSector"
-                                    id="compSector"
+                                    name="specialization"
                                     tabindex="8"
                                     disabled
                                 />
                             </div>
+                            <div class="form-col">
+                                <label for="resume">Resume</label>
+                                <input
+                                    type="file"
+                                    name="resume"
+                                    tabindex="9"
+                                    disabled
+                                />
+                            </div>
                         </div>
+                    </div>
+
+                    <div class="desc-section">
+                        <label for="skills">Technical Skills</label>
+                        <textarea
+                            name=""
+                            id="skills"
+                            cols="30"
+                            disabled
+                        ></textarea>
                     </div>
 
                     <div class="section" id="btnSection">
@@ -179,7 +202,7 @@
             </div>
         </main>
 
-        <script src="js/classSelect.js"></script>
-        <script src="js/imgPreview.js"></script>
+        <script src="../js/classSelect.js"></script>
+        <script src="../js/imgPreview.js"></script>
     </body>
 </html>

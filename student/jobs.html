@@ -4,6 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Jobs Applied</title>
+        <link rel="stylesheet" href="../css/navbar.css" />
         <link rel="stylesheet" href="../css/profile.css" />
         <link rel="stylesheet" href="../css/grid.css" />
         <link
@@ -15,7 +16,48 @@
         />
     </head>
     <body>
-        <div id="navbarContainer"></div>
+        <div class="nav-container">
+            <nav>
+                <div class="main-logo">
+                    <img src="../img/Headway.svg" alt="Headway Logo" />
+                </div>
+
+                <div class="nav-options">
+                    <div id="menu-item">
+                        <a href="dashboard.html" id="dashboard">
+                            <img src="../img/dashboard.svg" alt="dashboard" />
+                            <label for="Dashboard">Dashboard</label></a
+                        >
+                    </div>
+                    <div id="menu-item">
+                        <a href="#menu-item" id="profile">
+                            <img src="../img/profile.svg" alt="profile" />
+                            <label for="Profile">Profile</label></a
+                        >
+                    </div>
+                    <div id="menu-item">
+                        <a href="#jobs" id="jobApply" class="active">
+                            <img
+                                src="../img/jobs.svg"
+                                alt="jobs"
+                                class="active"
+                            />
+                            <label for="jobApply">Jobs Applied</label></a
+                        >
+                    </div>
+                </div>
+                <div id="logout-button">
+                    <label for="logout-button">Logout</label>
+                    <i class="fa fa-right-from-bracket"></i>
+                </div>
+            </nav>
+
+            <main>
+                <div id="dashboardContainer"></div>
+                <div id="profileContainer"></div>
+                <div id="jobsContainer"></div>
+            </main>
+        </div>
 
         <main>
             <div id="spacing"></div>
@@ -28,7 +70,8 @@
                             type="search"
                             name="searchCompany"
                             id="searchCompany"
-                            placeholder="Search"
+                            placeholder="Search Job Title"
+                            onfocus="this.select();"
                         />
                         <button type="button">
                             <i class="fa-solid fa-magnifying-glass"></i>
@@ -41,8 +84,8 @@
                         <div>Sl No.</div>
                         <div>Job Title</div>
                         <div>Salary Offered</div>
-                        <div>Applications received</div>
-                        <div id="status">Status</div>
+                        <div>Company</div>
+                        <div>Location</div>
                     </div>
 
                     <div id="scrollable-contain">
@@ -52,14 +95,14 @@
                                 Fullstack Graphic Designer
                             </div>
                             <div name="salary" id="salary">
-                                <div>999999</div>
+                                <div>1</div>
                                 <div>-</div>
                                 <div>999999</div>
                             </div>
-                            <div name="receivedApplications" id="app-receive">
-                                1<button type="submit">View</button>
+                            <div name="compName">
+                                School Book Company
                             </div>
-                            <div name="status">Closed</div>
+                            <div name="location">Bhubaneshwar</div>
                         </div>
 
                         <div class="contents">
@@ -68,19 +111,16 @@
                                 Business Development Representative
                             </div>
                             <div name="salary" id="salary">
-                                <div>999999</div>
+                                <div>10000</div>
                                 <div>-</div>
-                                <div>999999</div>
+                                <div>9999999</div>
                             </div>
-                            <div name="receivedApplications" id="app-receive">
-                                100000<button type="submit">View</button>
-                            </div>
-                            <div name="status">Active</div>
+                            <div name="compName">Universal Studios</div>
+                            <div name="location">Vishakapatnam</div>
                         </div>
                     </div>
                 </div>
             </div>
         </main>
-        <script src="js/navbar.js"></script>
     </body>
 </html>

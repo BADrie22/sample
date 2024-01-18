@@ -1,121 +1,170 @@
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: linear-gradient(rgb(0, 4, 40), rgb(0, 78, 146));
-  overflow: hidden;
-  height: 100vh;
-  width: 100vw;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(rgb(0, 4, 40), rgb(0, 78, 146));
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
 }
 main {
-  height: 45%;
-  width: 25%;
-  box-shadow: 0 0 1rem #121212;
-  border-radius: 1rem;
-  background-color: #f2f2f2;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-inline: 47%;
-  position: fixed;
-  padding: 1rem;
-  top: 40%;
-  transform: translate(-50%, -50%);
-  img {
-    align-self: center;
-    width: 75%;
-  }
-  form {
-    /* border: 2px solid #121212; */
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 25vw;
+    box-shadow: 0 0 1rem #121212;
+    border-radius: 1rem;
+    background-color: #f2f2f2;
     display: flex;
     flex-direction: column;
-    padding: 1rem;
-    #getMailId,
-    #getOTP {
-      background: transparent;
-      border: 1px solid #121212;
-      border-radius: 0.5rem;
-      font-size: 16px;
-      padding: 0.5rem 0.5rem;
-      text-align: center;
+    padding: 0.5rem 2rem;
+    form {
+        img {
+            align-self: center;
+            width: 15vw;
+        }
+        display: flex;
+        flex-direction: column;
+        padding: 1rem 0;
+        label {
+            font-weight: 600;
+            padding: 0.75rem 0.25rem;
+            text-align: center;
+        }
+        #getMailId,
+        #getOTP {
+            height: 4vh;
+            background: transparent;
+            border: 2px solid #121212;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            font-size: 16px;
+            font-weight: 600;
+            text-align: center;
+        }
+        #getMailId:focus,
+        #getOTP:focus {
+            outline: none;
+            border-color: #004e92;
+            color: #004e92;
+            font-size: 18px;
+        }
+        .inputDiv {
+            display: flex;
+            flex-direction: column;
+            .inputSpanner {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                input {
+                    width: 2rem;
+                    border: 0.1rem solid #121212;
+                    border-radius: 0.25rem;
+                    padding: 1rem 0.25rem;
+                    margin-inline: 0.1rem;
+                    font-size: 18px;
+                    font-weight: 600;
+                    text-align: center;
+                    &:focus {
+                        outline: none;
+                        border-color: #004e92;
+                        color: #004e92;
+                    }
+                }
+            }
+        }
+        .subSection {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            span,
+            a {
+                padding: 0.5rem;
+                text-align: end;
+                font-size: 16px;
+                /* color: #121212; */
+                text-decoration: none;
+            }
+        }
+        .btnSection {
+            display: flex;
+            flex-direction: row;
+            padding: 0.5rem 0;
+            width: 100%;
+            button[type='reset'] {
+                text-align: center;
+                margin: auto;
+                width: 50%;
+                background-color: transparent;
+                color: #121212;
+                text-decoration: underline;
+                font-weight: 600;
+            }
+            button {
+                outline: none;
+                width: 50%;
+                background-color: #004e92;
+                border: none;
+                border-radius: 0.5rem;
+                color: #f2f2f2;
+                cursor: pointer;
+                font-size: 14px;
+                padding: 0.75rem 0;
+                &:focus {
+                    font-weight: 600;
+                    filter: drop-shadow(0 0 0.1rem #277eba);
+                }
+            }
+        }
     }
-    #getMailId:focus,
-    #getOTP:focus {
-      box-shadow: 0 0 0.5rem #004e92;
-      color: #004e92;
-      font-size: 18px;
-      font-weight: 600;
-    }
-    label {
-      text-align: center;
-      padding-inline: 0.25rem;
-    }
-    span#validate {
-      visibility: hidden;
-      color: #ff1212;
-      font-size: 14px;
-      font-weight: 600;
-      padding: 0 0 1rem;
-      text-align: center;
-    }
-    .subSection {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      span, a {
-        padding: 0.5rem;
-        text-align: end;
-        font-size: 16px;
-        color: #121212;
-        text-decoration: none;
-      }
-    }
-    .btnSection {
-      display: flex;
-      flex-direction: row;
-      padding: 1rem 0 0;
-      gap: 0.5rem;
-      button {
-        width: 50%;
-      }
-      a {
-        color: #121212;
-        margin: auto;
-      }
-    }
+}
+
+span#validate {
+    display: none;
+    position: fixed;
+    bottom: 10%;
+    right: 10%;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+
+    background-color: #ff1212;
+    color: #f2f2f2;
+
+    font-size: 14px;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    border-radius: 0.25rem;
+
     button {
-      background-color: #004e92;
-      border: none;
-      border-radius: 0.5rem;
-      color: #f2f2f2;
-      cursor: pointer;
-      font-size: 14px;
-      padding: 0.75rem 0.25rem;
+        display: flex;
+        background-color: transparent;
+        border: none;
+        color: #f2f2f2;
+        font-weight: 600;
     }
-    a#cancel-button {
-      color: #121212;
-      text-align: center;
-      padding: 1rem 0 0;
-    }
-  }
 }
 
 @media only screen and (max-width: 575.98px) {
-  /* Extra small devices (phones) */
-  main {
-    text-align: center;
-    width: 60%;
-  }
+    /* Extra small devices (phones) */
+    main {
+        text-align: center;
+        width: 60%;
+    }
 }
 
 @media only screen and (min-width: 576px) and (max-width: 767.98px) {
-  /* Small devices (tablets) */
-  main {
-    width: 40%;
-  }
+    /* Small devices (tablets) */
+    main {
+        width: 40%;
+    }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991.98px) {
-  /* Medium devices (laptops, desktops) */
-  main {
-    width: 30%;
-  }
+    /* Medium devices (laptops, desktops) */
+    main {
+        width: 30%;
+    }
 }

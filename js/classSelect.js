@@ -1,18 +1,10 @@
-function classSelect(str) {
-    const activeClass = document.getElementById(str)
-    if (activeClass) {
-        activeClass.classList.add('active')
-        console.log(activeClass)
-    }
-}
-
 document.addEventListener('DOMContentLoaded', () => {
     const creditInput = document.getElementById('creditInput')
     const editButton = document.getElementById('editProfileBtn')
     const multiButton = document.getElementById('btnSection')
     const discardBtn = document.getElementById('discard')
     const uploadLabel = document.getElementById('upload')
-    const textArea = document.getElementById('jobDesc')
+    const textArea = document.querySelector('textarea')
     const creditsBtn = document.getElementById('creditsBtn')
     const chips = document.querySelectorAll('.chipsets > div')
 
@@ -24,33 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
         chips.forEach((chip) => {
             chip.addEventListener('click', () => addVal(chip))
         })
-    }
-
-    // Fetch and load the navbar asynchronously
-    const navbarContainer = document.getElementById('navbarContainer')
-    if (navbarContainer) {
-        fetch('./navbar.html')
-            .then((response) =>
-                response.ok
-                    ? response.text()
-                    : Promise.reject('Network response was not ok')
-            )
-            .then((data) => {
-                navbarContainer.innerHTML = data // Assuming 'data' contains the HTML content
-                navbarContainer.addEventListener('click', handleNavbarClick)
-
-                // Check if there's a hash in the URL and highlight the corresponding link
-                const hash = window.location.hash
-                if (hash) {
-                    const targetLink = navbarContainer.querySelector(
-                        `a[href="${hash}"]`
-                    )
-                    if (targetLink) {
-                        targetLink.classList.add('active')
-                    }
-                }
-            })
-            .catch((error) => console.error('Fetch error:', error))
     }
 
     if (creditsBtn) {
@@ -83,18 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (textArea instanceof Element) {
             textArea.disabled = !enable
-        }
-    }
-
-    function handleNavbarClick(event) {
-        const clickedElement = event.target
-        if (clickedElement.tagName === 'A') {
-            const activeElements = navbarContainer.querySelectorAll('.active')
-            activeElements.forEach((element) =>
-                element.classList.remove('active')
-            )
-
-            clickedElement.classList.add('active')
         }
     }
 
